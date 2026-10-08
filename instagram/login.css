@@ -107,9 +107,6 @@ fieldset {
     font-weight: 600;
 }
 
-.login_btn:disabled {
-    cursor: default;
-}
 
 .forgot_link {
     display: block;
