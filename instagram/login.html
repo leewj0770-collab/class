@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/default.css">
+    <link rel="stylesheet" href="../font/CSS/NotoSansKR.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Instagram 로그인</title>
+</head>
+<body>
+    <div id="wrap">
+        <main class="instagram_login">
+            <section class="login_area" aria-labelledby="login_title">
+                <div class="instagram_logo">
+                    <img src="img/instagram_icon.svg" alt="Instagram">
+                </div>
+
+                <h1 id="login_title">Instagram으로 로그인</h1>
+
+                <form action="" method="post">
+                    <fieldset>
+                        <legend class="sr-only">Instagram 로그인</legend>
+
+                        <div class="input_box">
+                            <label for="user_id" class="sr-only">휴대폰 번호, 사용자 이름 또는 이메일 주소</label>
+                            <input
+                                type="text"
+                                id="user_id"
+                                name="user_id"
+                                placeholder="휴대폰 번호, 사용자 이름 또는 이메일 주소"
+                                autocomplete="username"
+                            >
+                        </div>
+
+                        <div class="input_box">
+                            <label for="password" class="sr-only">비밀번호</label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="비밀번호"
+                                autocomplete="current-password"
+                            >
+                        </div>
+
+                        <button type="submit" class="login_btn" disabled>로그인</button>
+                    </fieldset>
+                </form>
+
+                <a href="#" class="forgot_link">비밀번호를 잊으셨나요?</a>
+            </section>
+
+            <section class="account_area" aria-label="계정 관련 메뉴">
+                <button type="button" class="facebook_btn">
+                    <span class="facebook_icon" aria-hidden="true">f</span>
+                    <span>Facebook으로 로그인</span>
+                </button>
+
+                <a href="#" class="signup_btn">새 계정 만들기</a>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
