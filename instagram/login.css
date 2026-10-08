@@ -5,7 +5,7 @@
     --black: #1E1E1E;
     --light-gray: #B5B5B5;
     --disabled-blue: #9EC2FC;
-    --light-bg: #F5F5F5;
+    --light-bg: #EDEDED;
     --blue: #2276FF;
     --border: #EDEDED;
 }
@@ -101,7 +101,7 @@ fieldset {
     margin-top: 20px;
     border-radius: 25px;
     background-color: var(--disabled-blue);
-    color: var(--light-bg);
+    color: var(--white);
     font-family: inherit;
     font-size: 1.6rem;
     font-weight: 600;
@@ -148,19 +148,9 @@ fieldset {
     color: #424242;
 }
 
-.facebook_icon {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+.facebook_btn img {
     width: 15px;
     height: 15px;
-    border-radius: 50%;
-    background-color: #1877F2;
-    color: var(--white);
-    font-family: Arial, sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    line-height: 1.25;
 }
 
 .signup_btn {
