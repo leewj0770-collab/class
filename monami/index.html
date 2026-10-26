@@ -1,79 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>모나미리뉴얼포트폴리오</title>
+    <title>모나미 리뉴얼 포트폴리오</title>
     <link rel="stylesheet" href="../CSS/default.css">
     <link rel="stylesheet" href="../npm/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../font/CSS/pretendardvariable.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="../npm/swiper/swiper-bundle.min.js"></script>
-
-    <style>
-        #wrap {background-color: yellow;}
-    </style>
 </head>
 <body>
     <div id="wrap">
         <header>제목공간</header>
+
         <main>
-
-            <div class="hero-sec">
-
-                <!-- Slider main container -->
+            <section class="hero-sec" aria-label="모나미 주요 배너">
                 <div class="swiper visual">
-                <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-                        <!-- Slides -->
                         <div class="swiper-slide">
-                        <img src="img/page_visual4.jpg" alt="글적글적" class="pc">
-                        <img src="img/monami_1.png" alt="모바일글적글적배너" class="mo">
+                            <img src="img/page_visual4.jpg" alt="글적글적 배너" class="pc">
+                            <img src="img/monami_1.png" alt="모바일 글적글적 배너" class="mo">
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="img/page_visual8.jpg" alt="주문제작 배너" class="pc">
+                            <img src="img/monami_2.png" alt="모바일 주문제작 배너" class="mo">
+                        </div>
                     </div>
-                   
-                    <div class="swiper-slide">
-                        <img src="img/page_visual8.jpg" alt="주문제작" class="pc">
-                        <img src="img/monami_2.png" alt="모바일주문제작배너" class="mo">
-                    </div>
-                </div>
-                    <!-- If we need pagination -->
-                    <div class="swiper-pagination"></div> 
 
-                    <!-- If we need navigation buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-
-                    <!-- If we need scrollbar -->
-                    <div class="swiper-scrollbar"></div>
+                    <div class="swiper-pagination" aria-label="배너 페이지 선택"></div>
+                    <div class="swiper-button-prev" aria-label="이전 배너"></div>
+                    <div class="swiper-button-next" aria-label="다음 배너"></div>
+                    <div class="swiper-scrollbar" aria-label="배너 진행 상태"></div>
                 </div>
-
-                </div>
-            </div>
+            </section>
         </main>
+
         <footer>&copy;</footer>
     </div>
+
     <script>
-                    const swiper = new Swiper('.hero-sec > .swiper', {
-            // Optional parameters
+        const swiper = new Swiper('.hero-sec .visual', {
             direction: 'horizontal',
             loop: true,
 
-            // If we need pagination
             pagination: {
                 el: '.visual .swiper-pagination',
+                clickable: true,
             },
 
-            // Navigation arrows
             navigation: {
                 nextEl: '.visual .swiper-button-next',
                 prevEl: '.visual .swiper-button-prev',
             },
 
-            // And if we need scrollbar
             scrollbar: {
                 el: '.visual .swiper-scrollbar',
+                draggable: true,
             },
-            });
+        });
     </script>
 </body>
 </html>
