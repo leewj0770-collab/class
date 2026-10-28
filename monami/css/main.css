@@ -13,22 +13,17 @@
     /* 02. Semantic: 사용 목적별 컬러 */
     --background-default: var(--color-paper);
     --background-inverse: var(--color-black);
-
     --surface-default: var(--color-white);
     --surface-secondary: var(--color-paper);
-
     --text-primary: var(--color-text-main);
     --text-secondary: var(--color-text-muted);
     --text-inverse: var(--color-white);
-
     --border-default: var(--color-border);
     --border-strong: var(--color-graphite);
-
     --action-primary: var(--color-pen-red);
     --action-primary-hover: var(--color-graphite);
     --action-secondary: var(--color-graphite);
     --action-secondary-hover: var(--color-black);
-
     --accent-primary: var(--color-pen-red);
     --accent-subtle: var(--color-soft-red);
     --accent-neutral: var(--color-graphite);
@@ -58,7 +53,7 @@ body {
     object-fit: cover;
 }
 
-/* HERO 문구: 배경 이미지 위에 고정 */
+/* HERO 문구: 기존 위치 유지 */
 .hero-sec .hero-copy {
     position: absolute;
     top: 37%;
@@ -80,9 +75,9 @@ body {
     letter-spacing: -0.04em;
 }
 
-/* 제목을 의도한 두 줄로 유지 */
-.hero-sec .hero-copy h1 .hero-line {
-    display: block !important;
+/* HTML에서 지정한 두 줄을 각각 한 줄로 유지 */
+.hero-sec .hero-copy h1 > .hero-line {
+    display: block;
     width: 100%;
 }
 
@@ -99,7 +94,6 @@ body {
         opacity: 0;
         transform: translateY(14px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -115,7 +109,7 @@ body {
 
 @media (max-width: 1024px) {
     .pc {
-        display: none !important;
+        display: none;
     }
 
     .mo {
