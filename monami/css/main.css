@@ -1,3 +1,39 @@
+:root {
+    /* 01. Primitives: 기본 컬러 */
+    --color-black: #1D1D1B;
+    --color-white: #FFFFFF;
+    --color-graphite: #4B4B4B;
+    --color-paper: #F7F7F5;
+    --color-text-main: #222222;
+    --color-text-muted: #70706C;
+    --color-border: #E3E3DF;
+    --color-pen-red: #D93636;
+    --color-soft-red: #FCECEC;
+
+    /* 02. Semantic: 사용 목적별 컬러 */
+    --background-default: var(--color-paper);
+    --background-inverse: var(--color-black);
+
+    --surface-default: var(--color-white);
+    --surface-secondary: var(--color-paper);
+
+    --text-primary: var(--color-text-main);
+    --text-secondary: var(--color-text-muted);
+    --text-inverse: var(--color-white);
+
+    --border-default: var(--color-border);
+    --border-strong: var(--color-graphite);
+
+    --action-primary: var(--color-pen-red);
+    --action-primary-hover: var(--color-graphite);
+    --action-secondary: var(--color-graphite);
+    --action-secondary-hover: var(--color-black);
+
+    --accent-primary: var(--color-pen-red);
+    --accent-subtle: var(--color-soft-red);
+    --accent-neutral: var(--color-graphite);
+}
+
 body {
     margin: 0;
     font-family: "Pretendard Variable", sans-serif;
@@ -30,7 +66,7 @@ body {
     z-index: 1;
     width: min(90%, 1000px);
     transform: translateX(-50%);
-    color: #fff;
+    color: var(--text-inverse);
     text-align: center;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
     pointer-events: none;
