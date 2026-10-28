@@ -100,6 +100,7 @@ body {
     }
 }
 
+/* 제목 아래 설명 문구는 20px로 고정 */
 .hero-sec .hero-copy p {
     margin: 0;
     font-size: 20px;
