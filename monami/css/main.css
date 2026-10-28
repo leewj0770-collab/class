@@ -80,8 +80,10 @@ body {
     letter-spacing: -0.04em;
 }
 
-.hero-sec .hero-line {
-    display: block;
+/* 제목을 의도한 두 줄로 유지 */
+.hero-sec .hero-copy h1 .hero-line {
+    display: block !important;
+    width: 100%;
 }
 
 .hero-sec .hero-char {
