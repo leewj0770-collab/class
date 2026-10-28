@@ -102,7 +102,7 @@ body {
 
 .hero-sec .hero-copy p {
     margin: 0;
-    font-size: clamp(20px, 1.2vw, 24px);
+    font-size: clamp(23px, 1.2vw, 24px);
     font-weight: 400;
     line-height: 1.6;
 }
