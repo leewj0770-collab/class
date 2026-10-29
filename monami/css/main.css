@@ -91,7 +91,7 @@ body {
     display: block;
     padding: 12px 0;
     color: var(--text-primary);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     white-space: nowrap;
     transition: font-weight 0.2s ease;
