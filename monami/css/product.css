@@ -1,0 +1,233 @@
+/* 제품소개 - 프리미엄 펜 */
+.product-section {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(190px, 0.26fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(28px, 4.8vw, 72px);
+    width: min(100%, 1440px);
+    height: 880px;
+    margin: 0 auto;
+    padding: 50px clamp(32px, 4.8vw, 70px);
+    background: #fff;
+    color: #111;
+}
+
+.product-sidebar {
+    min-width: 0;
+    padding-top: 34px;
+}
+
+.product-sidebar h2,
+.product-content > h2 {
+    margin: 0;
+    color: #111;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.04em;
+}
+
+.product-sidebar-desc {
+    margin: 10px 0 22px;
+    color: #777;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+.product-categories {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.product-category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 48px;
+    border-bottom: 1px solid #aaa;
+    color: #777;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.product-category:first-child {
+    border-top: 1px solid #aaa;
+}
+
+.product-category:hover,
+.product-category:focus-visible,
+.product-category.is-active {
+    color: #222;
+}
+
+.product-category small {
+    color: #888;
+    font-size: 12px;
+}
+
+.category-arrow {
+    display: inline-flex;
+    flex: 0 0 24px;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #858585;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1;
+}
+
+.product-category.is-active .category-arrow,
+.product-category:hover .category-arrow,
+.product-category:focus-visible .category-arrow {
+    background: #292929;
+}
+
+.product-content {
+    min-width: 0;
+}
+
+.product-content > h2 {
+    margin: 0 0 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(14px, 2.1vw, 30px);
+}
+
+.product-card {
+    min-width: 0;
+}
+
+.product-image-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 0.75;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #f6f6f5;
+}
+
+.product-image-link img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.product-image-link:hover img,
+.product-image-link:focus-visible img {
+    transform: scale(1.04);
+}
+
+.product-card h3 {
+    margin: 14px 0 6px;
+    color: #222;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    word-break: keep-all;
+}
+
+.product-detail {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #888;
+    font-size: 12px;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.product-detail:hover,
+.product-detail:focus-visible {
+    color: #222;
+}
+
+@media (max-width: 900px) {
+    .product-section {
+        grid-template-columns: minmax(150px, 0.32fr) minmax(0, 1fr);
+        gap: 24px;
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    .product-sidebar {
+        padding-top: 30px;
+    }
+
+    .product-sidebar-desc {
+        font-size: 18px;
+    }
+
+    .product-grid {
+        gap: 12px;
+    }
+
+    .product-image-link {
+        border-radius: 14px;
+    }
+}
+
+@media (max-width: 680px) {
+    .product-section {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 34px;
+        height: auto;
+        min-height: 0;
+        padding: 76px 20px 52px;
+    }
+
+    .product-sidebar {
+        padding-top: 0;
+    }
+
+    .product-sidebar-desc {
+        margin-bottom: 18px;
+        font-size: 20px;
+    }
+
+    .product-category {
+        min-height: 44px;
+    }
+
+    .product-content > h2 {
+        margin-bottom: 16px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px 14px;
+    }
+
+    .product-image-link {
+        aspect-ratio: 0.82;
+    }
+
+    .product-card h3 {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-image-link img,
+    .product-category {
+        transition: none;
+    }
+}
