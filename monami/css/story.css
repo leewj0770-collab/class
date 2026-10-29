@@ -134,7 +134,7 @@
     text-align: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 760px) {
     .story-intro {
         grid-template-columns: minmax(0, 1fr);
         gap: 36px;
