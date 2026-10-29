@@ -95,7 +95,7 @@ body {
     display: block;
     padding: 12px 0;
     color: var(--text-primary);
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     white-space: nowrap;
     transition: font-weight 0.2s ease;
@@ -132,7 +132,7 @@ body {
     display: block;
     padding: 10px 20px;
     color: var(--text-secondary);
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.4;
     white-space: nowrap;
@@ -317,7 +317,7 @@ body {
 
     .gnb-list > .gnb-item > a {
         padding: 14px 0;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .sub-menu {
@@ -334,7 +334,7 @@ body {
 
     .sub-menu a {
         padding: 8px 0;
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .hero-sec .hero-visual {
