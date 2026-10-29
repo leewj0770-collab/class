@@ -87,19 +87,62 @@ body {
     gap: clamp(20px, 2.5vw, 40px);
 }
 
-.gnb-list a {
+.gnb-item {
+    position: relative;
+}
+
+.gnb-list > .gnb-item > a {
     display: block;
     padding: 12px 0;
     color: var(--text-primary);
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 500;
     white-space: nowrap;
     transition: font-weight 0.2s ease;
 }
 
-.gnb-list a:hover {
+.gnb-list > .gnb-item > a:hover,
+.gnb-list > .gnb-item:focus-within > a {
     color: var(--text-primary);
     font-weight: 700;
+}
+
+/* PC 드롭다운: 흰색 패널과 간결한 세로 메뉴 */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 20;
+    display: none;
+    min-width: 220px;
+    padding: 12px 0;
+    transform: translateX(-50%);
+    background: var(--surface-default);
+    border: 1px solid var(--border-default);
+    border-radius: 4px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.gnb-item:hover > .sub-menu,
+.gnb-item:focus-within > .sub-menu {
+    display: block;
+}
+
+.sub-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-secondary);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    white-space: nowrap;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.sub-menu a:hover,
+.sub-menu a:focus-visible {
+    color: var(--text-primary);
+    background-color: var(--background-default);
 }
 
 .gnb-list a:focus-visible,
@@ -272,8 +315,25 @@ body {
         gap: 0;
     }
 
-    .gnb-list a {
+    .gnb-list > .gnb-item > a {
         padding: 14px 0;
+        font-size: 20px;
+    }
+
+    .sub-menu {
+        position: static;
+        display: block;
+        min-width: 0;
+        padding: 0 0 8px 12px;
+        transform: none;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .sub-menu a {
+        padding: 8px 0;
         font-size: 20px;
     }
 
