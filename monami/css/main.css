@@ -48,6 +48,7 @@ body {
 }
 
 .header-inner {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,14 +68,17 @@ body {
 .logo a {
     display: inline-flex;
     align-items: center;
-    color: var(--color-pen-red);
+    color: var(--color-black);
     font-size: 32px;
     font-weight: 800;
     letter-spacing: -0.06em;
 }
 
+/* PC에서는 로고와 별개로 메뉴를 헤더 중앙에 배치 */
 .gnb {
-    margin-left: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .gnb-list {
@@ -90,11 +94,12 @@ body {
     font-size: 20px;
     font-weight: 500;
     white-space: nowrap;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, font-weight 0.2s ease;
 }
 
 .gnb-list a:hover {
     color: var(--action-primary);
+    font-weight: 600;
 }
 
 .gnb-list a:focus-visible,
@@ -250,6 +255,7 @@ body {
         right: 0;
         left: 0;
         display: none;
+        transform: none;
         margin: 0;
         padding: 12px 20px 20px;
         background-color: var(--surface-default);
