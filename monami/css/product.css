@@ -6,7 +6,6 @@
     align-items: start;
     gap: clamp(28px, 4.8vw, 72px);
     width: min(100%, 1720px);
-    height: 880px;
     margin: 0 auto;
     padding: 50px clamp(32px, 4.8vw, 70px);
     background: #fff;
