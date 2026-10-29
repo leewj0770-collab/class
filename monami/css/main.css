@@ -94,12 +94,12 @@ body {
     font-size: 20px;
     font-weight: 500;
     white-space: nowrap;
-    transition: color 0.2s ease, font-weight 0.2s ease;
+    transition: font-weight 0.2s ease;
 }
 
 .gnb-list a:hover {
-    color: var(--action-primary);
-    font-weight: 600;
+    color: var(--text-primary);
+    font-weight: 700;
 }
 
 .gnb-list a:focus-visible,
