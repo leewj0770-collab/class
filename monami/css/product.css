@@ -7,7 +7,7 @@
     gap: clamp(28px, 4.8vw, 72px);
     width: min(100%, 1720px);
     height: 880px;
-    margin: 0 auto;
+    margin: 80px auto 0;
     padding: 50px clamp(32px, 4.8vw, 70px);
     background: #fff;
     color: #111;
@@ -167,6 +167,7 @@
     .product-section {
         grid-template-columns: minmax(150px, 0.32fr) minmax(0, 1fr);
         gap: 24px;
+        margin-top: 48px;
         padding-right: 24px;
         padding-left: 24px;
     }
@@ -193,6 +194,7 @@
         grid-template-columns: minmax(0, 1fr);
         gap: 34px;
         height: auto;
+        margin-top: 32px;
         min-height: 0;
         padding: 76px 20px 52px;
     }
