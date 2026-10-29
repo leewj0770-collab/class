@@ -38,11 +38,81 @@ body {
     display: none;
 }
 
+/* HEADER */
+#header {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    background-color: var(--surface-default);
+    border-bottom: 1px solid var(--border-default);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    width: min(100%, 1440px);
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.logo {
+    flex: 0 0 auto;
+    margin: 0;
+    line-height: 1;
+}
+
+.logo a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-pen-red);
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.06em;
+}
+
+.gnb {
+    margin-left: auto;
+}
+
+.gnb-list {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 2.5vw, 40px);
+}
+
+.gnb-list a {
+    display: block;
+    padding: 12px 0;
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.gnb-list a:hover {
+    color: var(--action-primary);
+}
+
+.gnb-list a:focus-visible,
+.logo a:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--action-primary);
+    outline-offset: 5px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
 /* Swiper 없이 고정된 HERO 배너 */
 .hero-sec .hero-visual {
+    position: relative;
     width: 100%;
     aspect-ratio: 12 / 5;
-    position: relative;
     overflow: hidden;
 }
 
@@ -67,7 +137,7 @@ body {
     pointer-events: none;
 }
 
-.hero-sec .hero-copy h1 {
+.hero-sec .hero-copy h2 {
     margin: 0;
     font-size: clamp(32px, 3vw, 48px);
     font-weight: 500;
@@ -76,7 +146,7 @@ body {
 }
 
 /* HTML에서 지정한 두 줄을 각각 한 줄로 유지 */
-.hero-sec .hero-copy h1 > .hero-line {
+.hero-sec .hero-copy h2 > .hero-line {
     display: block;
     width: 100%;
 }
@@ -108,6 +178,17 @@ body {
     line-height: 1.6;
 }
 
+@media (max-width: 1200px) {
+    .header-inner {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+
+    .gnb-list {
+        gap: 20px;
+    }
+}
+
 @media (max-width: 1024px) {
     .pc {
         display: none;
@@ -115,6 +196,79 @@ body {
 
     .mo {
         display: block;
+    }
+
+    #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .header-inner {
+        min-height: 60px;
+        padding: 0 20px;
+    }
+
+    .logo a {
+        font-size: 28px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        width: 44px;
+        height: 44px;
+        padding: 8px;
+        color: var(--text-primary);
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: currentColor;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:first-child {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:last-child {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .gnb {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0;
+        display: none;
+        margin: 0;
+        padding: 12px 20px 20px;
+        background-color: var(--surface-default);
+        border-bottom: 1px solid var(--border-default);
+    }
+
+    .gnb.is-open {
+        display: block;
+    }
+
+    .gnb-list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .gnb-list a {
+        padding: 14px 0;
+        font-size: 20px;
     }
 
     .hero-sec .hero-visual {
@@ -128,7 +282,7 @@ body {
         width: 88%;
     }
 
-    .hero-sec .hero-copy h1 {
+    .hero-sec .hero-copy h2 {
         font-size: clamp(24px, 4.8vw, 32px);
         line-height: 1.5;
     }
@@ -137,15 +291,6 @@ body {
         margin: 0;
         font-size: 20px;
     }
-
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        z-index: 10;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -153,5 +298,9 @@ body {
         animation: none;
         opacity: 1;
         transform: none;
+    }
+
+    .menu-toggle span {
+        transition: none;
     }
 }
