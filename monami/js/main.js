@@ -18,3 +18,35 @@ heroLines.forEach((line) => {
         charIndex += 1;
     });
 });
+
+// 모바일 헤더 메뉴 열기/닫기
+const menuToggle = document.querySelector(".menu-toggle");
+const gnb = document.querySelector("#gnb");
+
+if (menuToggle && gnb) {
+    menuToggle.addEventListener("click", () => {
+        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+
+        menuToggle.setAttribute("aria-expanded", String(!isExpanded));
+        menuToggle.setAttribute("aria-label", isExpanded ? "메뉴 열기" : "메뉴 닫기");
+        gnb.classList.toggle("is-open", !isExpanded);
+    });
+
+    // 메뉴 항목을 선택하면 모바일 메뉴를 닫습니다.
+    gnb.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "메뉴 열기");
+            gnb.classList.remove("is-open");
+        });
+    });
+
+    // Escape 키로 메뉴를 닫을 수 있도록 합니다.
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "메뉴 열기");
+            gnb.classList.remove("is-open");
+        }
+    });
+}
