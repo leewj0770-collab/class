@@ -11,7 +11,7 @@
     gap: clamp(36px, 5vw, 76px);
     width: min(100%, 1720px);
     height: 880px;
-    margin: 0 auto;
+    margin: 80px auto 0;
     padding: 50px clamp(32px, 5.35vw, 78px);
     background: #fff;
 }
@@ -141,6 +141,7 @@
         grid-template-columns: minmax(0, 1fr);
         gap: 36px;
         height: auto;
+        margin-top: 40px;
         min-height: 0;
         padding: 104px 24px 48px;
     }
