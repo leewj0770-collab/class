@@ -1,0 +1,220 @@
+/* 모나미 뉴스 섹션 */
+.news-section {
+    box-sizing: border-box;
+    width: 100%;
+    height: 880px;
+    padding: 64px clamp(20px, 5.35vw, 78px);
+    background: #fff;
+    color: #111;
+}
+
+.news-inner {
+    width: min(100%, 1284px);
+    margin: 0 auto;
+}
+
+.news-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #111;
+    margin-bottom: 12px;
+}
+
+.news-titles {
+    min-width: 0;
+}
+
+.news-section .section-title {
+    margin: 0 0 10px;
+    color: #111;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.04em;
+}
+
+.news-section .section-desc {
+    margin: 0;
+    color: #777;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+.news-section .btn-more {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-width: 130px;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    color: #111;
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.news-section .btn-more:hover,
+.news-section .btn-more:focus-visible {
+    border-color: #111;
+    background: #111;
+    color: #fff;
+}
+
+.news-section .arrow-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 1;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.news-section .btn-more .arrow-icon {
+    color: currentColor;
+}
+
+.news-section .news-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.news-section .news-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.news-section .news-item > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 104px;
+    padding: 20px 10px;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.news-section .news-item > a:hover,
+.news-section .news-item > a:focus-visible {
+    background: #f9f9f9;
+}
+
+.news-section .news-info {
+    min-width: 0;
+}
+
+.news-section .news-item-title {
+    margin: 0 0 8px;
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    word-break: keep-all;
+}
+
+.news-section .news-date {
+    color: #888;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.news-section .news-item > a:hover .arrow-icon,
+.news-section .news-item > a:focus-visible .arrow-icon {
+    color: #111;
+    transform: translateX(4px);
+}
+
+.news-section a:focus-visible {
+    outline: 2px solid #d93636;
+    outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+    .news-section {
+        height: auto;
+        min-height: 0;
+        padding: 64px 24px 48px;
+    }
+
+    .news-header {
+        align-items: flex-start;
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    .news-section .section-desc {
+        font-size: 18px;
+    }
+
+    .news-section .btn-more {
+        min-width: 112px;
+        min-height: 40px;
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .news-section .news-item > a {
+        min-height: 96px;
+        padding: 18px 6px;
+        gap: 16px;
+    }
+
+    .news-section .news-item-title {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 520px) {
+    .news-section {
+        padding: 56px 20px 40px;
+    }
+
+    .news-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .news-section .section-title {
+        margin-bottom: 8px;
+    }
+
+    .news-section .section-desc {
+        font-size: 16px;
+    }
+
+    .news-section .news-item > a {
+        min-height: 0;
+        padding: 18px 4px;
+    }
+
+    .news-section .news-item-title {
+        font-size: 14px;
+    }
+
+    .news-section .news-date {
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .news-section .btn-more,
+    .news-section .arrow-icon,
+    .news-section .news-item > a {
+        transition: none;
+    }
+}
