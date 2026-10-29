@@ -31,9 +31,9 @@
 .product-sidebar-desc {
     margin: 10px 0 22px;
     color: #777;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.6;
     word-break: keep-all;
 }
 
@@ -172,7 +172,7 @@
     }
 
     .product-sidebar-desc {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .product-grid {
@@ -199,7 +199,7 @@
 
     .product-sidebar-desc {
         margin-bottom: 18px;
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .product-category {
