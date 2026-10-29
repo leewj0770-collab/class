@@ -1,0 +1,160 @@
+/* Quick Link: 기업·단체 문의 카드 */
+.inquiry-section {
+    box-sizing: border-box;
+    width: 100%;
+    height: 880px;
+    padding: 64px clamp(20px, 5.35vw, 78px);
+    background: var(--surface-default, #fff);
+}
+
+.inquiry-inner {
+    display: flex;
+    align-items: center;
+    width: min(100%, 1284px);
+    height: 100%;
+    margin: 0 auto;
+}
+
+.inquiry-section .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.inquiry-list {
+    display: flex;
+    width: 100%;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.inquiry-card {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.inquiry-card > a {
+    display: block;
+    overflow: hidden;
+    border-radius: 20px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.inquiry-card > a:focus-visible {
+    outline: 3px solid var(--action-primary, #d93636);
+    outline-offset: 4px;
+}
+
+.card-image-box {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--surface-secondary, #f7f7f5);
+}
+
+.card-image-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.overlay-text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    transform: translateY(10px);
+    transition: transform 0.4s ease;
+}
+
+.inquiry-card > a:hover .card-image-box img,
+.inquiry-card > a:focus-visible .card-image-box img {
+    filter: blur(4px);
+    transform: scale(1.05);
+}
+
+.inquiry-card > a:hover .card-overlay,
+.inquiry-card > a:focus-visible .card-overlay {
+    opacity: 1;
+}
+
+.inquiry-card > a:hover .overlay-text,
+.inquiry-card > a:focus-visible .overlay-text {
+    transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+    .inquiry-section {
+        height: auto;
+        min-height: 0;
+        padding: 48px 24px;
+    }
+
+    .inquiry-inner {
+        height: auto;
+    }
+
+    .inquiry-list {
+        gap: 16px;
+    }
+
+    .card-image-box {
+        height: clamp(220px, 42vw, 320px);
+        border-radius: 16px;
+    }
+
+    .inquiry-card > a {
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 520px) {
+    .inquiry-section {
+        padding: 40px 20px;
+    }
+
+    .inquiry-list {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .card-image-box {
+        height: 240px;
+    }
+
+    .overlay-text {
+        font-size: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card-image-box img,
+    .card-overlay,
+    .overlay-text {
+        transition: none;
+    }
+}
