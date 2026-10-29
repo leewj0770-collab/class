@@ -57,7 +57,7 @@
 .card-image-box {
     position: relative;
     width: 100%;
-    height: 380px;
+    height: 500px;
     overflow: hidden;
     border-radius: 20px;
     background: var(--surface-secondary, #f7f7f5);
@@ -123,7 +123,7 @@
     }
 
     .card-image-box {
-        height: clamp(220px, 42vw, 320px);
+        height: clamp(260px, 48vw, 360px);
         border-radius: 16px;
     }
 
@@ -143,7 +143,7 @@
     }
 
     .card-image-box {
-        height: 240px;
+        height: 260px;
     }
 
     .overlay-text {
