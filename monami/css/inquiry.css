@@ -10,7 +10,7 @@
 .inquiry-inner {
     display: flex;
     align-items: center;
-    width: min(100%, 1600px);
+    width: min(100%, 1720px);
     height: 100%;
     margin: 0 auto;
 }
