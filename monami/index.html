@@ -11,7 +11,33 @@
 </head>
 <body>
     <div id="wrap">
-        <header>제목공간</header>
+        <header id="header">
+            <div class="header-inner">
+                <!-- 로고 이미지 파일이 준비되면 텍스트 로고를 이미지로 교체합니다. -->
+                <h1 class="logo">
+                    <a href="#" aria-label="모나미 메인">
+                        <span>monami</span>
+                    </a>
+                </h1>
+
+                <!-- 주 내비게이션 영역 -->
+                <nav class="gnb" id="gnb" aria-label="주 메뉴">
+                    <ul class="gnb-list">
+                        <li><a href="#">모나미 이야기</a></li>
+                        <li><a href="#">제품소개</a></li>
+                        <li><a href="#">모나미 뉴스</a></li>
+                        <li><a href="#">고객지원</a></li>
+                        <li><a href="#">기업·단체 구매</a></li>
+                    </ul>
+                </nav>
+
+                <button class="menu-toggle" type="button" aria-controls="gnb" aria-expanded="false" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
 
         <main>
             <section class="hero-sec" aria-label="모나미 메인 배너">
@@ -20,10 +46,10 @@
                     <img src="img/hero-writing_ma.png" alt="정원 풍경이 보이는 창가에서 책을 읽는 모습" class="mo">
 
                     <div class="hero-copy">
-                        <h1 aria-label="어쩌면 삶은 인생이라는 종이 위에 써 내려가는 펜의 기록 같습니다.">
+                        <h2 aria-label="어쩌면 삶은 인생이라는 종이 위에 써 내려가는 펜의 기록 같습니다.">
                             <span class="hero-line">어쩌면 삶은 인생이라는 종이 위에</span>
                             <span class="hero-line">써 내려가는 펜의 기록 같습니다.</span>
-                        </h1>
+                        </h2>
                         <p>모나미는 언제나 당신의 생각과 기록과 함께합니다.</p>
                     </div>
                 </div>
