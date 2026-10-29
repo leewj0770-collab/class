@@ -18,7 +18,7 @@
 
 .story-copy {
     min-width: 0;
-    transform: translateY(24px);
+    transform: translateY(40px);
 }
 
 .story-copy h2 {
@@ -97,7 +97,7 @@
     width: 100%;
     height: 720px;
     min-width: 0;
-    transform: translateY(24px);
+    transform: translateY(40px);
 }
 
 .story-image {
