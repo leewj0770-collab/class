@@ -32,6 +32,7 @@
 body {
     margin: 0;
     font-family: "Pretendard Variable", sans-serif;
+    background: var(--background-default, #F7F7F5);
 }
 
 .mo {
