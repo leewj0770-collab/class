@@ -72,13 +72,14 @@
 }
 
 .footer-logo a {
-    display: inline-block;
-    color: var(--color-black, #1d1d1b);
-    font-size: 32px;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.06em;
-    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    display: block;
+    width: 120px;
+    height: auto;
 }
 
 .footer-info {
@@ -165,8 +166,8 @@
         left: -10px;
     }
 
-    .footer-logo a {
-        font-size: 28px;
+    .footer-logo img {
+        width: 104px;
     }
 
     .company-address {
