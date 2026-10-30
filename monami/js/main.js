@@ -19,8 +19,7 @@ heroLines.forEach((line) => {
     });
 });
 
-// HERO와 같은 글자 단위 등장 효과를 아래 콘텐츠에도 적용합니다.
-// 해당 영역이 화면에 들어왔을 때 애니메이션이 시작되도록 합니다.
+// 아래 콘텐츠는 원래 HTML과 줄바꿈을 유지한 채 요소 단위로 나타납니다.
 const revealTargets = document.querySelectorAll(
     ".story-copy h2, .story-quote, .story-description, " +
     ".product-sidebar h2, .product-sidebar-desc, .product-content > h2, " +
@@ -28,33 +27,7 @@ const revealTargets = document.querySelectorAll(
 );
 
 if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    revealTargets.forEach((target) => {
-        target.classList.add("text-reveal");
-        let delayIndex = 0;
-
-        const wrapTextNodes = (node) => {
-            Array.from(node.childNodes).forEach((child) => {
-                if (child.nodeType === Node.TEXT_NODE && child.textContent.trim()) {
-                    const fragment = document.createDocumentFragment();
-
-                    Array.from(child.textContent).forEach((character) => {
-                        const span = document.createElement("span");
-                        span.className = "text-reveal-char";
-                        span.textContent = character;
-                        span.style.setProperty("--char-delay", `${delayIndex * 0.035}s`);
-                        fragment.appendChild(span);
-                        delayIndex += 1;
-                    });
-
-                    child.replaceWith(fragment);
-                } else if (child.nodeType === Node.ELEMENT_NODE) {
-                    wrapTextNodes(child);
-                }
-            });
-        };
-
-        wrapTextNodes(target);
-    });
+    revealTargets.forEach((target) => target.classList.add("text-reveal"));
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
@@ -65,12 +38,8 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
         });
     }, { threshold: 0.2 });
 
-    document.querySelectorAll(".text-reveal").forEach((target) => {
-        revealObserver.observe(target);
-    });
-} else {
-    revealTargets.forEach((target) => target.classList.add("is-visible"));
-}
+    revealTargets.forEach((target) => revealObserver.observe(target));
+} 
 
 // 모바일 헤더 메뉴 열기/닫기
 const menuToggle = document.querySelector(".menu-toggle");
