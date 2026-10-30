@@ -109,6 +109,16 @@
     border-radius: 14px;
 }
 
+
+/* 브랜드 이미지에 마우스를 올리면 살짝 확대됩니다. */
+.story-image {
+    transition: transform 0.35s ease;
+}
+
+.story-image:hover {
+    transform: scale(1.025);
+}
+
 .story-image-pen {
     grid-column: 1;
     grid-row: 1;
