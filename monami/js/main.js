@@ -48,22 +48,29 @@ const imageRevealTargets = document.querySelectorAll(
     ".inquiry-card .card-image-box"
 );
 
-if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+if ("IntersectionObserver" in window) {
     imageRevealTargets.forEach((image, index) => {
         image.classList.add("image-reveal");
         image.style.setProperty("--image-delay", `${(index % 3) * 0.12}s`);
     });
 
-    const imageRevealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.15 });
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        // 모션 줄이기 설정에서는 이미지를 숨기지 않고 바로 표시합니다.
+        imageRevealTargets.forEach((image) => image.classList.add("is-visible"));
+    } else {
+        const imageRevealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
 
-    imageRevealTargets.forEach((image) => imageRevealObserver.observe(image));
+        imageRevealTargets.forEach((image) => imageRevealObserver.observe(image));
+    }
+} else {
+    imageRevealTargets.forEach((image) => image.classList.add("is-visible"));
 }
 
 // 모바일 헤더 메뉴 열기/닫기
