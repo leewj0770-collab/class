@@ -95,7 +95,7 @@
     grid-template-rows: minmax(0, 1.4fr) minmax(0, 1fr);
     gap: 10px;
     width: 100%;
-    height: 490px;
+    height: 720px;
     min-width: 0;
     transform: translateY(40px);
 }
@@ -143,8 +143,7 @@
 .story-image-markers {
     grid-column: 2;
     grid-row: 1 / 3;
-    align-self: end;
-    height: calc(100% - 44px);
+    transform: translateY(44px);
     object-position: center;
     background: #e8e8e8;
 }
@@ -174,9 +173,6 @@
         transform: none;
     }
 
-    .story-image-markers {
-        height: 100%;
-    }
 
     .story-copy h2 {
         margin-bottom: 28px;
