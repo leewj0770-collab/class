@@ -69,10 +69,12 @@ body {
 .logo a {
     display: inline-flex;
     align-items: center;
-    color: var(--color-black);
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -0.06em;
+}
+
+.logo img {
+    display: block;
+    width: 120px;
+    height: auto;
 }
 
 /* PC에서는 로고와 별개로 메뉴를 헤더 중앙에 배치 */
@@ -258,8 +260,8 @@ body {
         padding: 0 20px;
     }
 
-    .logo a {
-        font-size: 28px;
+    .logo img {
+        width: 104px;
     }
 
     .menu-toggle {
