@@ -43,7 +43,8 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
 
 
 // 제품 카테고리: 클릭한 항목의 강조 상태를 유지합니다.
-const productCategories = document.querySelectorAll(".product-category");
+// 브랜드 스토어로 이동하는 전체 메뉴는 외부 링크이므로 선택 상태에서 제외합니다.
+const productCategories = document.querySelectorAll(".product-category:not(.product-category-external)");
 
 productCategories.forEach((category) => {
     category.addEventListener("click", () => {
@@ -51,6 +52,17 @@ productCategories.forEach((category) => {
         category.classList.add("is-active");
     });
 });
+
+// 전체 메뉴의 외부 주소가 정해지기 전에는 임시 링크가 페이지를 위로 이동시키지 않도록 합니다.
+const externalProductLink = document.querySelector(".product-category-external");
+
+if (externalProductLink) {
+    externalProductLink.addEventListener("click", (event) => {
+        if (externalProductLink.getAttribute("href") === "#") {
+            event.preventDefault();
+        }
+    });
+}
 
 // 이미지 인터랙션
 const storyImageTargets = document.querySelectorAll(".story-gallery .story-image");
