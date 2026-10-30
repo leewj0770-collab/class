@@ -238,6 +238,29 @@ body {
     line-height: 1.6;
 }
 
+
+/* 스크롤 진입 시 이미지가 살짝 올라오며 나타납니다. */
+.image-reveal {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+}
+
+.image-reveal.is-visible {
+    animation: imageRevealIn 0.65s ease forwards;
+    animation-delay: var(--image-delay, 0s);
+}
+
+@keyframes imageRevealIn {
+    from {
+        opacity: 0;
+        transform: translateY(22px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 @media (max-width: 1200px) {
     .header-inner {
         padding-right: 24px;
@@ -373,7 +396,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
     .hero-sec .hero-char,
-    .text-reveal {
+    .text-reveal,
+    .image-reveal {
         animation: none;
         opacity: 1;
         transform: none;
