@@ -42,6 +42,16 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
 } 
 
 
+// 제품 카테고리: 클릭한 항목의 강조 상태를 유지합니다.
+const productCategories = document.querySelectorAll(".product-category");
+
+productCategories.forEach((category) => {
+    category.addEventListener("click", () => {
+        productCategories.forEach((item) => item.classList.remove("is-active"));
+        category.classList.add("is-active");
+    });
+});
+
 // 이미지 인터랙션
 const storyImageTargets = document.querySelectorAll(".story-gallery .story-image");
 const inquiryCards = document.querySelectorAll(".inquiry-card .card-image-box");
