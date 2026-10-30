@@ -42,24 +42,22 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
 } 
 
 
-// 이미지가 화면에 들어올 때 인터랙션 적용
+// 이미지 인터랙션
 const storyImageTargets = document.querySelectorAll(".story-gallery .story-image");
-const otherImageTargets = document.querySelectorAll(
-    ".product-card .product-image-link, .inquiry-card .card-image-box"
-);
+const inquiryCards = document.querySelectorAll(".inquiry-card .card-image-box");
+const productImages = document.querySelectorAll(".product-card .product-image-link");
+const allRevealImages = [...storyImageTargets, ...inquiryCards, ...productImages];
 
-// 모나미 이야기 이미지는 조금 더 스크롤한 뒤 등장하도록 합니다.
 if ("IntersectionObserver" in window) {
+    allRevealImages.forEach((image) => image.classList.add("image-reveal"));
     storyImageTargets.forEach((image, index) => {
-        image.classList.add("image-reveal");
         image.style.setProperty("--image-delay", `${index * 0.12}s`);
     });
 
-    otherImageTargets.forEach((image) => image.classList.add("image-reveal"));
-
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        [...storyImageTargets, ...otherImageTargets].forEach((image) => image.classList.add("is-visible"));
+        allRevealImages.forEach((image) => image.classList.add("is-visible"));
     } else {
+        // 모나미 이야기 이미지는 사용자가 실제로 스크롤하기 전에는 관찰을 시작하지 않습니다.
         const storyImageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -69,17 +67,22 @@ if ("IntersectionObserver" in window) {
             });
         }, { threshold: 0.05, rootMargin: "0px 0px -100px 0px" });
 
-        storyImageTargets.forEach((image) => storyImageObserver.observe(image));
+        const initialScrollY = window.scrollY;
+        const startStoryImageReveal = () => {
+            if (Math.abs(window.scrollY - initialScrollY) < 5) return;
 
-        // 기업 문의와 단체 문의 카드는 하나의 그룹으로 관찰해 동시에 나타나게 합니다.
-        const inquiryCards = document.querySelectorAll(".inquiry-card .card-image-box");
+            storyImageTargets.forEach((image) => storyImageObserver.observe(image));
+            window.removeEventListener("scroll", startStoryImageReveal);
+        };
+        window.addEventListener("scroll", startStoryImageReveal, { passive: true });
+
+        // 기업 문의와 단체 문의는 두 카드가 함께 나타나도록 같은 그룹으로 처리합니다.
         const inquiryObserver = new IntersectionObserver((entries, observer) => {
             if (entries.some((entry) => entry.isIntersecting)) {
                 inquiryCards.forEach((image) => image.classList.add("is-visible"));
                 observer.disconnect();
             }
         }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
-
         inquiryCards.forEach((image) => inquiryObserver.observe(image));
 
         const productImageObserver = new IntersectionObserver((entries, observer) => {
@@ -90,13 +93,10 @@ if ("IntersectionObserver" in window) {
                 }
             });
         }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
-
-        document.querySelectorAll(".product-card .product-image-link").forEach((image) => {
-            productImageObserver.observe(image);
-        });
+        productImages.forEach((image) => productImageObserver.observe(image));
     }
 } else {
-    [...storyImageTargets, ...otherImageTargets].forEach((image) => image.classList.add("is-visible"));
+    allRevealImages.forEach((image) => image.classList.add("is-visible"));
 }
 
 // 모바일 헤더 메뉴 열기/닫기
