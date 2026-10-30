@@ -210,15 +210,13 @@ body {
     animation-delay: var(--char-delay);
 }
 
-.text-reveal-char {
-    display: inline-block;
-    white-space: pre;
+.text-reveal {
     opacity: 0;
+    transform: translateY(14px);
 }
 
-.text-reveal.is-visible .text-reveal-char {
+.text-reveal.is-visible {
     animation: heroCharIn 0.45s ease forwards;
-    animation-delay: var(--char-delay);
 }
 
 @keyframes heroCharIn {
@@ -375,7 +373,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
     .hero-sec .hero-char,
-    .text-reveal-char {
+    .text-reveal {
         animation: none;
         opacity: 1;
         transform: none;
