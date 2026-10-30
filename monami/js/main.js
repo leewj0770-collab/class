@@ -42,23 +42,47 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
 } 
 
 
-// 이미지가 화면에 들어올 때 순서대로 나타나는 인터랙션
-const imageRevealTargets = document.querySelectorAll(
-    ".story-gallery .story-image, .product-card .product-image-link, " +
-    ".inquiry-card .card-image-box"
+// 이미지가 화면에 들어올 때 인터랙션 적용
+const storyImageTargets = document.querySelectorAll(".story-gallery .story-image");
+const otherImageTargets = document.querySelectorAll(
+    ".product-card .product-image-link, .inquiry-card .card-image-box"
 );
 
+// 모나미 이야기 이미지는 조금 더 스크롤한 뒤 등장하도록 합니다.
 if ("IntersectionObserver" in window) {
-    imageRevealTargets.forEach((image, index) => {
+    storyImageTargets.forEach((image, index) => {
         image.classList.add("image-reveal");
-        image.style.setProperty("--image-delay", `${(index % 3) * 0.12}s`);
+        image.style.setProperty("--image-delay", `${index * 0.12}s`);
     });
 
+    otherImageTargets.forEach((image) => image.classList.add("image-reveal"));
+
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        // 모션 줄이기 설정에서는 이미지를 숨기지 않고 바로 표시합니다.
-        imageRevealTargets.forEach((image) => image.classList.add("is-visible"));
+        [...storyImageTargets, ...otherImageTargets].forEach((image) => image.classList.add("is-visible"));
     } else {
-        const imageRevealObserver = new IntersectionObserver((entries, observer) => {
+        const storyImageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: "0px 0px -100px 0px" });
+
+        storyImageTargets.forEach((image) => storyImageObserver.observe(image));
+
+        // 기업 문의와 단체 문의 카드는 하나의 그룹으로 관찰해 동시에 나타나게 합니다.
+        const inquiryCards = document.querySelectorAll(".inquiry-card .card-image-box");
+        const inquiryObserver = new IntersectionObserver((entries, observer) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+                inquiryCards.forEach((image) => image.classList.add("is-visible"));
+                observer.disconnect();
+            }
+        }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
+
+        inquiryCards.forEach((image) => inquiryObserver.observe(image));
+
+        const productImageObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("is-visible");
@@ -67,10 +91,12 @@ if ("IntersectionObserver" in window) {
             });
         }, { threshold: 0.05, rootMargin: "0px 0px -30px 0px" });
 
-        imageRevealTargets.forEach((image) => imageRevealObserver.observe(image));
+        document.querySelectorAll(".product-card .product-image-link").forEach((image) => {
+            productImageObserver.observe(image);
+        });
     }
 } else {
-    imageRevealTargets.forEach((image) => image.classList.add("is-visible"));
+    [...storyImageTargets, ...otherImageTargets].forEach((image) => image.classList.add("is-visible"));
 }
 
 // 모바일 헤더 메뉴 열기/닫기
