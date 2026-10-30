@@ -116,7 +116,13 @@
 }
 
 .story-image:hover {
-    transform: scale(1.025);
+    filter: brightness(0.94);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .story-image {
+        transition: none;
+    }
 }
 
 .story-image-pen {
