@@ -41,6 +41,31 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
     revealTargets.forEach((target) => revealObserver.observe(target));
 } 
 
+
+// 이미지가 화면에 들어올 때 순서대로 나타나는 인터랙션
+const imageRevealTargets = document.querySelectorAll(
+    ".story-gallery .story-image, .product-card .product-image-link, " +
+    ".inquiry-card .card-image-box"
+);
+
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    imageRevealTargets.forEach((image, index) => {
+        image.classList.add("image-reveal");
+        image.style.setProperty("--image-delay", `${(index % 3) * 0.12}s`);
+    });
+
+    const imageRevealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    imageRevealTargets.forEach((image) => imageRevealObserver.observe(image));
+}
+
 // 모바일 헤더 메뉴 열기/닫기
 const menuToggle = document.querySelector(".menu-toggle");
 const gnb = document.querySelector("#gnb");
