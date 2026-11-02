@@ -1,0 +1,81 @@
+/* Art Deco theme: geometric symmetry, elegant gold accents, and deep colors */
+body {
+    background: #101b2d;
+    color: #f4e7c5;
+}
+
+.instagram_login {
+    border: 1px solid #c9a65b;
+    border-radius: 0;
+    background: #142238;
+    box-shadow: 0 0 0 6px #101b2d, 0 0 0 7px #c9a65b;
+}
+
+.login_area h1 {
+    color: #f4e7c5;
+    font-family: Georgia, serif;
+    letter-spacing: 0.04em;
+}
+
+.instagram_logo img {
+    filter: grayscale(1) brightness(0) invert(0.88) sepia(0.4);
+}
+
+.divider {
+    border-color: #c9a65b;
+}
+
+.input_box input {
+    border: 1px solid #c9a65b;
+    border-radius: 0;
+    background: #101b2d;
+    color: #f4e7c5;
+}
+
+.input_box input:focus {
+    outline: 1px solid #f4e7c5;
+    outline-offset: 2px;
+}
+
+.login_btn {
+    border: 1px solid #e2c477;
+    border-radius: 0;
+    background: #c9a65b;
+    color: #101b2d;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.login_btn:hover {
+    background: #f0d895;
+}
+
+.forgot_link,
+.signup_btn {
+    color: #e2c477;
+}
+
+.account_area {
+    border-top: 1px solid #c9a65b;
+    background: #182942;
+}
+
+.facebook_btn {
+    border: 1px solid #c9a65b;
+    border-radius: 0;
+    background: transparent;
+    color: #f4e7c5;
+}
+
+.signup_btn {
+    border: 1px solid #c9a65b;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .instagram_login {
+        box-shadow: 0 0 0 4px #101b2d, 0 0 0 5px #c9a65b;
+    }
+}
