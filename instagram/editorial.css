@@ -1,0 +1,196 @@
+/* Editorial — Instagram login page
+   기존 HTML 구조와 login.css를 유지하고, 편집 디자인의 타이포그래피와 여백을 덮어씁니다. */
+
+:root {
+    --editorial-ink: #24221F;
+    --editorial-paper: #F6F2EA;
+    --editorial-line: #C9C0B3;
+    --editorial-muted: #756E64;
+    --editorial-accent: #A43D2D;
+    --editorial-white: #FFFEFB;
+}
+
+body {
+    color: var(--editorial-ink);
+    background-color: var(--editorial-paper);
+}
+
+#wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100dvh;
+    padding: 36px 16px;
+    background-color: var(--editorial-paper);
+}
+
+.instagram_login {
+    min-height: 0;
+    padding: 34px 26px 30px;
+    background-color: var(--editorial-white);
+    border: 1px solid var(--editorial-line);
+}
+
+.instagram_logo {
+    height: 76px;
+}
+
+.instagram_logo img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+.divider {
+    margin-top: 22px;
+    border-top: 1px solid var(--editorial-ink);
+}
+
+.login_area h1 {
+    margin-top: 42px;
+    margin-bottom: 24px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.04em;
+}
+
+.input_box + .input_box {
+    margin-top: 14px;
+}
+
+.input_box input {
+    height: 54px;
+    border: 1px solid var(--editorial-line);
+    border-radius: 0;
+    background-color: var(--editorial-white);
+    color: var(--editorial-ink);
+    font-size: 1.4rem;
+}
+
+.input_box input::placeholder {
+    color: var(--editorial-muted);
+}
+
+.input_box input:focus-visible {
+    outline: 2px solid var(--editorial-accent);
+    outline-offset: 3px;
+}
+
+.login_btn {
+    height: 48px;
+    margin-top: 18px;
+    border: 1px solid var(--editorial-ink);
+    border-radius: 0;
+    background-color: var(--editorial-ink);
+    color: var(--editorial-white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.login_btn:hover {
+    background-color: var(--editorial-accent);
+    border-color: var(--editorial-accent);
+}
+
+.forgot_link {
+    margin-top: 22px;
+    color: var(--editorial-muted);
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--editorial-line);
+    text-underline-offset: 4px;
+}
+
+.account_area {
+    gap: 12px;
+    margin-top: 42px;
+    padding-top: 22px;
+    border-top: 1px solid var(--editorial-line);
+}
+
+.facebook_btn,
+.signup_btn {
+    min-height: 46px;
+    height: auto;
+    padding: 10px 12px;
+    border: 1px solid var(--editorial-line);
+    border-radius: 0;
+    background-color: transparent;
+    color: var(--editorial-ink);
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+}
+
+.facebook_btn {
+    gap: 10px;
+}
+
+.facebook_btn img {
+    width: 15px;
+    height: 15px;
+}
+
+.signup_btn {
+    border-color: var(--editorial-accent);
+    color: var(--editorial-accent);
+}
+
+.facebook_btn:hover {
+    border-color: var(--editorial-ink);
+    background-color: var(--editorial-paper);
+}
+
+.signup_btn:hover {
+    background-color: var(--editorial-accent);
+    color: var(--editorial-white);
+}
+
+.login_btn:focus-visible,
+.facebook_btn:focus-visible,
+.signup_btn:focus-visible,
+.forgot_link:focus-visible {
+    outline: 2px solid var(--editorial-accent);
+    outline-offset: 4px;
+}
+
+@media (max-width: 500px) {
+    #wrap {
+        padding: 20px 14px;
+    }
+
+    .instagram_login {
+        min-height: 0;
+        padding: 28px 20px 24px;
+    }
+
+    .login_area h1 {
+        margin-top: 34px;
+        font-size: 2.3rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .instagram_login {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .input_box input {
+        padding: 0 12px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login_btn,
+    .facebook_btn,
+    .signup_btn {
+        transition: none;
+    }
+}
