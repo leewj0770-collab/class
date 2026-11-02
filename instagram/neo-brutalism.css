@@ -1,0 +1,164 @@
+/* Neo Brutalism — Instagram login page
+   기존 login.css를 유지하고, 이 파일에서 스타일만 덮어씁니다. */
+
+:root {
+    --neo-ink: #111111;
+    --neo-yellow: #FFF16A;
+    --neo-pink: #FF7BAC;
+    --neo-blue: #7CCBFF;
+    --neo-white: #FFFFFF;
+}
+
+body {
+    color: var(--neo-ink);
+    background-color: #B9F5D0;
+}
+
+#wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 16px;
+    background-color: #B9F5D0;
+}
+
+.instagram_login {
+    min-height: 0;
+    padding: 28px 20px 24px;
+    border: 3px solid var(--neo-ink);
+    background-color: var(--neo-yellow);
+    box-shadow: 10px 10px 0 var(--neo-ink);
+}
+
+.instagram_logo {
+    height: 76px;
+}
+
+.instagram_logo img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+.divider {
+    margin-top: 18px;
+    border-top: 3px solid var(--neo-ink);
+}
+
+.login_area h1 {
+    margin-top: 34px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1.35;
+}
+
+.input_box input {
+    height: 56px;
+    border: 3px solid var(--neo-ink);
+    border-radius: 0;
+    background-color: var(--neo-white);
+    box-shadow: 4px 4px 0 var(--neo-ink);
+    color: var(--neo-ink);
+}
+
+.input_box input:focus-visible {
+    outline: 3px dashed var(--neo-ink);
+    outline-offset: 5px;
+}
+
+.input_box input::placeholder {
+    color: #555555;
+}
+
+.login_btn {
+    height: 48px;
+    border: 3px solid var(--neo-ink);
+    border-radius: 0;
+    background-color: var(--neo-blue);
+    box-shadow: 4px 4px 0 var(--neo-ink);
+    color: var(--neo-ink);
+    font-weight: 900;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.forgot_link {
+    margin-top: 24px;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.account_area {
+    gap: 14px;
+    margin-top: 36px;
+}
+
+.facebook_btn,
+.signup_btn {
+    min-height: 48px;
+    height: auto;
+    padding: 10px 12px;
+    border: 3px solid var(--neo-ink);
+    border-radius: 0;
+    box-shadow: 4px 4px 0 var(--neo-ink);
+    color: var(--neo-ink);
+    font-weight: 900;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.facebook_btn {
+    background-color: var(--neo-white);
+}
+
+.signup_btn {
+    background-color: var(--neo-pink);
+}
+
+.login_btn:hover,
+.facebook_btn:hover,
+.signup_btn:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 var(--neo-ink);
+}
+
+.login_btn:focus-visible,
+.facebook_btn:focus-visible,
+.signup_btn:focus-visible,
+.forgot_link:focus-visible {
+    outline: 3px dashed var(--neo-ink);
+    outline-offset: 5px;
+}
+
+@media (max-width: 500px) {
+    #wrap {
+        padding: 20px 14px;
+    }
+
+    .instagram_login {
+        min-height: 0;
+        padding: 24px 18px;
+        box-shadow: 7px 7px 0 var(--neo-ink);
+    }
+}
+
+@media (max-width: 380px) {
+    .instagram_login {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .input_box input {
+        padding: 0 12px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login_btn,
+    .facebook_btn,
+    .signup_btn {
+        transition: none;
+    }
+}
