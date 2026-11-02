@@ -1,0 +1,222 @@
+/* Y2K Chrome — Instagram login page
+   기존 HTML 구조와 login.css를 유지하고, 크롬 질감·메탈릭 그라데이션·Y2K 포인트 컬러를 덮어씁니다. */
+
+:root {
+    --chrome-ink: #171923;
+    --chrome-silver: #DDE3ED;
+    --chrome-white: #FFFFFF;
+    --chrome-lilac: #C6B8FF;
+    --chrome-blue: #7EDBFF;
+    --chrome-pink: #FF9EDB;
+    --chrome-muted: #656A78;
+}
+
+body {
+    color: var(--chrome-ink);
+    background:
+        radial-gradient(ellipse at 15% 10%, rgba(255, 158, 219, 0.7), transparent 34%),
+        radial-gradient(ellipse at 90% 85%, rgba(126, 219, 255, 0.75), transparent 38%),
+        linear-gradient(135deg, #F8F4FF 0%, #DDE6F5 48%, #FDF3FC 100%);
+}
+
+#wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100dvh;
+    padding: 36px 16px;
+    background: transparent;
+}
+
+.instagram_login {
+    min-height: 0;
+    padding: 30px 24px 26px;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 28px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(226, 231, 246, 0.92) 52%, rgba(255, 255, 255, 0.98));
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.95) inset,
+        0 0 0 1px rgba(154, 166, 197, 0.28),
+        0 22px 55px rgba(85, 91, 133, 0.2);
+    backdrop-filter: blur(14px);
+}
+
+.instagram_logo {
+    height: 76px;
+}
+
+.instagram_logo img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 5px rgba(103, 94, 151, 0.16));
+}
+
+.divider {
+    margin-top: 20px;
+    border-top: 1px solid rgba(142, 151, 179, 0.5);
+}
+
+.login_area h1 {
+    margin-top: 38px;
+    margin-bottom: 22px;
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -0.04em;
+}
+
+.input_box + .input_box {
+    margin-top: 14px;
+}
+
+.input_box input {
+    height: 54px;
+    border: 1px solid #B8C0D3;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F0F3FA 100%);
+    box-shadow:
+        0 2px 3px rgba(59, 68, 99, 0.08) inset,
+        0 1px 0 rgba(255, 255, 255, 0.95);
+    color: var(--chrome-ink);
+    font-size: 1.4rem;
+}
+
+.input_box input::placeholder {
+    color: var(--chrome-muted);
+}
+
+.input_box input:focus-visible {
+    outline: 3px solid var(--chrome-lilac);
+    outline-offset: 3px;
+    border-color: #8C79E8;
+}
+
+.login_btn {
+    height: 48px;
+    margin-top: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    background:
+        linear-gradient(180deg, #FFFFFF 0%, #D9DDF0 18%, #9CA9C8 48%, #E8ECF8 72%, #A7B1D0 100%);
+    box-shadow:
+        0 1px 0 #FFFFFF inset,
+        0 3px 0 #818BAA,
+        0 6px 12px rgba(71, 78, 119, 0.2);
+    color: #22263A;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+}
+
+.login_btn:hover {
+    filter: saturate(1.15) brightness(1.03);
+    transform: translateY(-1px);
+    box-shadow:
+        0 1px 0 #FFFFFF inset,
+        0 4px 0 #818BAA,
+        0 9px 16px rgba(71, 78, 119, 0.22);
+}
+
+.forgot_link {
+    margin-top: 22px;
+    color: #5B5D77;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(139, 121, 232, 0.55);
+    text-underline-offset: 4px;
+}
+
+.account_area {
+    gap: 12px;
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(142, 151, 179, 0.45);
+}
+
+.facebook_btn,
+.signup_btn {
+    min-height: 46px;
+    height: auto;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: 14px;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.95) inset,
+        0 3px 8px rgba(79, 86, 126, 0.12);
+    color: var(--chrome-ink);
+    font-size: 1.4rem;
+    font-weight: 750;
+    transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+}
+
+.facebook_btn {
+    gap: 10px;
+    background: linear-gradient(135deg, #FFFFFF 0%, #E6EAF5 50%, #FFFFFF 100%);
+}
+
+.facebook_btn img {
+    width: 15px;
+    height: 15px;
+}
+
+.signup_btn {
+    background: linear-gradient(110deg, #F9D8F0 0%, #D7D0FF 48%, #C5EEFF 100%);
+}
+
+.facebook_btn:hover,
+.signup_btn:hover {
+    transform: translateY(-2px);
+    filter: saturate(1.12);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.95) inset,
+        0 6px 13px rgba(79, 86, 126, 0.17);
+}
+
+.login_btn:focus-visible,
+.facebook_btn:focus-visible,
+.signup_btn:focus-visible,
+.forgot_link:focus-visible {
+    outline: 3px solid #8C79E8;
+    outline-offset: 4px;
+}
+
+@media (max-width: 500px) {
+    #wrap {
+        padding: 20px 14px;
+    }
+
+    .instagram_login {
+        min-height: 0;
+        padding: 26px 20px 24px;
+        border-radius: 24px;
+    }
+
+    .login_area h1 {
+        margin-top: 32px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .instagram_login {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .input_box input {
+        padding: 0 12px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login_btn,
+    .facebook_btn,
+    .signup_btn {
+        transition: none;
+    }
+}
