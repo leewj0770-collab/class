@@ -227,3 +227,667 @@
         border-radius: 12px;
     }
 }
+
+
+/* ============================================================
+   Story subpage — scoped styles
+   메인페이지의 공통 Header/GNB, 컬러 변수, Pretendard 서체를 재사용합니다.
+   아래 규칙은 .about-page 내부에만 적용되어 메인페이지 레이아웃을 변경하지 않습니다.
+   ============================================================ */
+
+.about-page {
+    color: var(--text-primary);
+    background: var(--surface-default);
+}
+
+.about-page a:focus-visible {
+    outline: 2px solid var(--action-primary);
+    outline-offset: 4px;
+}
+
+.about-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: min(100%, 1720px);
+    margin: 0 auto;
+    padding: 22px clamp(32px, 5.35vw, 78px);
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.about-breadcrumb a {
+    transition: color 0.2s ease;
+}
+
+.about-breadcrumb a:hover {
+    color: var(--action-primary);
+}
+
+.about-breadcrumb [aria-current="page"] {
+    color: var(--text-primary);
+}
+
+.about-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(36px, 5vw, 76px);
+    width: min(100%, 1720px);
+    margin: 0 auto;
+    padding: 46px clamp(32px, 5.35vw, 78px) 112px;
+}
+
+.about-hero-copy {
+    min-width: 0;
+}
+
+.about-eyebrow {
+    margin: 0 0 18px;
+    color: var(--action-primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+}
+
+.about-hero h2 {
+    margin: 0 0 24px;
+    color: var(--text-primary);
+    font-size: clamp(34px, 4vw, 58px);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.045em;
+}
+
+.about-hero-copy > p:last-child {
+    color: var(--text-secondary);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.about-image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 0;
+    overflow: hidden;
+    padding: 24px;
+    color: var(--text-secondary);
+    background: var(--surface-secondary);
+    border: 1px dashed var(--border-default);
+    border-radius: 14px;
+    text-align: center;
+}
+
+.about-image-placeholder .placeholder-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border-strong);
+    border-radius: 50%;
+    color: var(--text-primary);
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.about-image-placeholder > span:not(.placeholder-mark) {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.about-image-placeholder small {
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.about-hero-image {
+    min-height: 420px;
+    aspect-ratio: 1.45 / 1;
+}
+
+.about-section {
+    width: min(100%, 1720px);
+    margin: 0 auto;
+    padding: 100px clamp(32px, 5.35vw, 78px);
+    scroll-margin-top: 100px;
+}
+
+.about-section-heading {
+    max-width: 760px;
+    margin-bottom: 48px;
+}
+
+.about-section-heading .about-eyebrow {
+    margin-bottom: 12px;
+}
+
+.about-section-heading h2 {
+    margin: 0 0 16px;
+    color: var(--text-primary);
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.04em;
+}
+
+.about-section-heading > p:last-child {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.ceo-section {
+    background: var(--background-default);
+}
+
+.ceo-content {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    align-items: stretch;
+    gap: clamp(32px, 5vw, 72px);
+}
+
+.ceo-image {
+    min-height: 500px;
+}
+
+.ceo-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+}
+
+.ceo-lead {
+    margin: 0 0 28px;
+    color: var(--text-primary);
+    font-size: clamp(24px, 2.5vw, 34px);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.035em;
+}
+
+.ceo-copy > p:not(.ceo-lead):not(.content-note) {
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.ceo-signature {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 20px;
+    padding-left: 16px;
+    border-left: 2px solid var(--action-primary);
+}
+
+.ceo-signature span {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.ceo-signature strong {
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.content-note {
+    margin-top: 18px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.brand-story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(36px, 6vw, 88px);
+}
+
+.brand-story-copy {
+    min-width: 0;
+}
+
+.brand-story-quote {
+    margin-bottom: 28px;
+    color: var(--text-primary);
+    font-size: clamp(20px, 2.2vw, 28px);
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: -0.03em;
+}
+
+.brand-story-copy > p:not(.brand-story-quote) {
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.about-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    min-height: 38px;
+    margin-top: 14px;
+    padding: 6px 4px;
+    border-bottom: 1px solid var(--border-strong);
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.about-text-link span {
+    color: var(--action-primary);
+    transition: transform 0.2s ease;
+}
+
+.about-text-link:hover,
+.about-text-link:focus-visible {
+    color: var(--action-primary);
+    border-color: var(--action-primary);
+}
+
+.about-text-link:hover span {
+    transform: translate(2px, -2px);
+}
+
+.brand-story-image {
+    min-height: 430px;
+    aspect-ratio: 1 / 1.05;
+}
+
+.history-section {
+    background: var(--background-default);
+}
+
+.history-feature {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 0.9fr) minmax(280px, 1fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 56px);
+    padding: 36px 0;
+    border-top: 1px solid var(--border-default);
+    border-bottom: 1px solid var(--border-default);
+}
+
+.history-year {
+    color: var(--action-primary);
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+}
+
+.history-feature-copy h3 {
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.history-feature-copy p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.history-image {
+    min-height: 220px;
+    aspect-ratio: 1.45 / 1;
+    border-radius: 10px;
+}
+
+.history-note {
+    margin-top: 20px;
+}
+
+.company-info-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(32px, 6vw, 88px);
+}
+
+.company-info-intro h3 {
+    margin-bottom: 16px;
+    color: var(--text-primary);
+    font-size: clamp(24px, 2.5vw, 32px);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.035em;
+}
+
+.company-info-intro > p {
+    margin-bottom: 28px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.company-image {
+    min-height: 230px;
+    aspect-ratio: 1.5 / 1;
+    border-radius: 10px;
+}
+
+.company-info-list {
+    border-top: 1px solid var(--border-strong);
+}
+
+.company-info-list > div {
+    display: grid;
+    grid-template-columns: minmax(100px, 0.32fr) minmax(0, 0.68fr);
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border-default);
+}
+
+.company-info-list dt {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.company-info-list dd {
+    min-width: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.company-info-list .content-note {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+}
+
+.timeline-section {
+    padding-bottom: 120px;
+    background: var(--surface-default);
+}
+
+.company-timeline {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+.company-timeline::before {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 118px;
+    width: 1px;
+    background: var(--border-default);
+    content: "";
+}
+
+.timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 56px;
+    padding: 0 0 42px;
+}
+
+.timeline-item::before {
+    position: absolute;
+    top: 7px;
+    left: 113px;
+    width: 11px;
+    height: 11px;
+    border: 2px solid var(--action-primary);
+    border-radius: 50%;
+    background: var(--surface-default);
+    content: "";
+}
+
+.timeline-year {
+    color: var(--action-primary);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.timeline-detail h3 {
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.timeline-detail p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.timeline-placeholder .timeline-year {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.timeline-placeholder::before {
+    border-color: var(--border-strong);
+}
+
+@media (max-width: 1024px) {
+    .about-hero {
+        padding-top: 30px;
+        padding-bottom: 84px;
+    }
+
+    .about-hero-image {
+        min-height: 340px;
+    }
+
+    .history-feature {
+        grid-template-columns: 110px minmax(0, 1fr);
+    }
+
+    .history-image {
+        grid-column: 2;
+        width: 100%;
+        max-width: 480px;
+    }
+}
+
+@media (max-width: 760px) {
+    .about-page {
+        padding-top: 60px;
+    }
+
+    .about-breadcrumb {
+        padding: 18px 24px;
+    }
+
+    .about-hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        padding: 28px 24px 64px;
+    }
+
+    .about-hero h2 {
+        font-size: clamp(32px, 7vw, 44px);
+    }
+
+    .about-hero-copy > p:last-child {
+        font-size: 16px;
+    }
+
+    .about-hero-image {
+        min-height: 300px;
+        aspect-ratio: 1.3 / 1;
+    }
+
+    .about-section {
+        padding: 68px 24px;
+        scroll-margin-top: 76px;
+    }
+
+    .about-section-heading {
+        margin-bottom: 32px;
+    }
+
+    .ceo-content,
+    .brand-story-grid,
+    .company-info-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .ceo-image {
+        min-height: 340px;
+        max-height: 440px;
+    }
+
+    .brand-story-image {
+        min-height: 300px;
+        aspect-ratio: 1.2 / 1;
+    }
+
+    .history-feature {
+        grid-template-columns: 90px minmax(0, 1fr);
+        gap: 20px;
+        padding: 28px 0;
+    }
+
+    .history-year {
+        font-size: 30px;
+    }
+
+    .history-image {
+        grid-column: 1 / -1;
+        max-width: none;
+        min-height: 240px;
+    }
+
+    .company-image {
+        min-height: 240px;
+    }
+
+    .timeline-section {
+        padding-bottom: 72px;
+    }
+}
+
+@media (max-width: 560px) {
+    .about-breadcrumb {
+        padding: 16px 20px;
+    }
+
+    .about-hero {
+        gap: 24px;
+        padding: 24px 20px 52px;
+    }
+
+    .about-hero h2 {
+        margin-bottom: 18px;
+        font-size: 32px;
+    }
+
+    .about-hero-image {
+        min-height: 240px;
+        padding: 18px;
+    }
+
+    .about-section {
+        padding: 56px 20px;
+    }
+
+    .about-section-heading h2 {
+        font-size: 28px;
+    }
+
+    .about-section-heading > p:last-child {
+        font-size: 14px;
+    }
+
+    .ceo-image {
+        min-height: 280px;
+    }
+
+    .ceo-lead {
+        font-size: 24px;
+    }
+
+    .ceo-copy > p:not(.ceo-lead):not(.content-note),
+    .brand-story-copy > p:not(.brand-story-quote) {
+        font-size: 15px;
+    }
+
+    .brand-story-image {
+        min-height: 240px;
+    }
+
+    .history-feature {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .history-image {
+        grid-column: auto;
+        min-height: 200px;
+    }
+
+    .company-info-list > div {
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 14px;
+        padding: 18px 0;
+    }
+
+    .company-timeline::before {
+        left: 88px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 66px minmax(0, 1fr);
+        gap: 44px;
+        padding-bottom: 34px;
+    }
+
+    .timeline-item::before {
+        left: 83px;
+    }
+
+    .timeline-year {
+        font-size: 14px;
+    }
+
+    .timeline-detail h3 {
+        font-size: 16px;
+    }
+
+    .timeline-detail p {
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-page *,
+    .about-page *::before,
+    .about-page *::after {
+        scroll-behavior: auto;
+        transition: none;
+        animation: none;
+    }
+}
