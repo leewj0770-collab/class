@@ -1,0 +1,197 @@
+/* Bauhaus — Instagram login page
+   기하학적 형태, 기본 색상, 비대칭 포인트를 활용한 바우하우스 스타일 */
+
+:root {
+    --bauhaus-ink: #171717;
+    --bauhaus-paper: #F7F3E8;
+    --bauhaus-red: #E53935;
+    --bauhaus-blue: #2457C5;
+    --bauhaus-yellow: #F4C430;
+    --bauhaus-white: #FFFFFF;
+}
+
+body {
+    color: var(--bauhaus-ink);
+    background:
+        radial-gradient(circle at 12% 12%, var(--bauhaus-red) 0 34px, transparent 35px),
+        radial-gradient(circle at 90% 88%, var(--bauhaus-blue) 0 54px, transparent 55px),
+        linear-gradient(135deg, #F7F3E8 0%, #F7F3E8 100%);
+}
+
+#wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100dvh;
+    padding: 36px 16px;
+    background: transparent;
+}
+
+.instagram_login {
+    min-height: 0;
+    padding: 30px 24px 26px;
+    border: 2px solid var(--bauhaus-ink);
+    border-radius: 0;
+    background-color: var(--bauhaus-paper);
+    box-shadow: 8px 8px 0 var(--bauhaus-ink);
+}
+
+.instagram_logo {
+    height: 76px;
+}
+
+.instagram_logo img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+}
+
+.divider {
+    margin-top: 20px;
+    border-top: 2px solid var(--bauhaus-ink);
+}
+
+.login_area h1 {
+    margin-top: 38px;
+    margin-bottom: 22px;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+.input_box + .input_box {
+    margin-top: 14px;
+}
+
+.input_box input {
+    height: 54px;
+    border: 2px solid var(--bauhaus-ink);
+    border-radius: 0;
+    background-color: var(--bauhaus-white);
+    color: var(--bauhaus-ink);
+    font-size: 1.4rem;
+}
+
+.input_box input::placeholder {
+    color: #595959;
+}
+
+.input_box input:focus-visible {
+    outline: 3px solid var(--bauhaus-blue);
+    outline-offset: 3px;
+}
+
+.login_btn {
+    height: 48px;
+    margin-top: 18px;
+    border: 2px solid var(--bauhaus-ink);
+    border-radius: 0;
+    background-color: var(--bauhaus-red);
+    color: var(--bauhaus-white);
+    font-size: 1.5rem;
+    font-weight: 900;
+    transition: background-color 150ms ease, color 150ms ease;
+}
+
+.login_btn:hover {
+    background-color: var(--bauhaus-yellow);
+    color: var(--bauhaus-ink);
+}
+
+.forgot_link {
+    margin-top: 22px;
+    color: var(--bauhaus-blue);
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.account_area {
+    gap: 12px;
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 2px solid var(--bauhaus-ink);
+}
+
+.facebook_btn,
+.signup_btn {
+    min-height: 46px;
+    height: auto;
+    padding: 10px 12px;
+    border: 2px solid var(--bauhaus-ink);
+    border-radius: 0;
+    background-color: var(--bauhaus-white);
+    color: var(--bauhaus-ink);
+    font-size: 1.4rem;
+    font-weight: 800;
+    transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.facebook_btn {
+    gap: 10px;
+}
+
+.facebook_btn img {
+    width: 15px;
+    height: 15px;
+}
+
+.signup_btn {
+    background-color: var(--bauhaus-yellow);
+    text-align: center;
+}
+
+.facebook_btn:hover,
+.signup_btn:hover {
+    transform: translate(-2px, -2px);
+    background-color: var(--bauhaus-blue);
+    color: var(--bauhaus-white);
+}
+
+.login_btn:focus-visible,
+.facebook_btn:focus-visible,
+.signup_btn:focus-visible,
+.forgot_link:focus-visible {
+    outline: 3px solid var(--bauhaus-blue);
+    outline-offset: 4px;
+}
+
+@media (max-width: 500px) {
+    #wrap {
+        padding: 20px 14px;
+    }
+
+    .instagram_login {
+        min-height: 0;
+        padding: 26px 20px 24px;
+        box-shadow: 6px 6px 0 var(--bauhaus-ink);
+    }
+
+    .login_area h1 {
+        margin-top: 32px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .instagram_login {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .input_box input {
+        padding: 0 12px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login_btn,
+    .facebook_btn,
+    .signup_btn {
+        transition: none;
+    }
+}
