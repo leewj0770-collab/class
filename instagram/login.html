@@ -6,10 +6,76 @@
     <link rel="stylesheet" href="../CSS/default.css">
     <link rel="stylesheet" href="../font/CSS/NotoSansKR.css">
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="y2k-chrome.css">
+    <link id="theme-style" rel="stylesheet" href="y2k-chrome.css">
+    <style>
+        .theme-switcher {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 12px;
+            border: 1px solid rgba(100, 100, 120, 0.25);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 5px 18px rgba(30, 30, 60, 0.12);
+            color: #22243A;
+            font-family: "Noto Sans KR", sans-serif;
+            font-size: 13px;
+            backdrop-filter: blur(12px);
+        }
+
+        .theme-switcher label {
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .theme-switcher select {
+            max-width: 165px;
+            min-height: 34px;
+            padding: 0 28px 0 9px;
+            border: 1px solid #B9BED0;
+            border-radius: 7px;
+            background: #FFFFFF;
+            color: #22243A;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .theme-switcher {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                justify-content: space-between;
+                gap: 8px;
+                padding: 8px 10px;
+            }
+
+            .theme-switcher select {
+                max-width: 62%;
+            }
+
+            #wrap {
+                padding-top: 76px !important;
+            }
+        }
+    </style>
     <title>Instagram 로그인</title>
 </head>
 <body>
+    <div class="theme-switcher">
+        <label for="theme-select">테마</label>
+        <select id="theme-select" name="theme" aria-label="로그인 화면 디자인 테마 선택">
+            <option value="glassmorphism.css">Glassmorphism</option>
+            <option value="neo-brutalism.css">Neo Brutalism</option>
+            <option value="editorial.css">Editorial</option>
+            <option value="y2k-chrome.css" selected>Y2K Chrome</option>
+        </select>
+    </div>
+
     <div id="wrap">
         <main class="instagram_login">
             <section class="login_area" aria-labelledby="login_title">
@@ -68,5 +134,13 @@
             </section>
         </main>
     </div>
+    <script>
+        const themeSelect = document.querySelector("#theme-select");
+        const themeStyle = document.querySelector("#theme-style");
+
+        themeSelect.addEventListener("change", function () {
+            themeStyle.href = themeSelect.value;
+        });
+    </script>
 </body>
 </html>
