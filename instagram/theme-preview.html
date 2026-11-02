@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/default.css">
+    <link rel="stylesheet" href="../font/CSS/NotoSansKR.css">
+    <link rel="stylesheet" href="login.css">
+    <link id="theme-style" rel="stylesheet" href="glassmorphism.css">
+    <title>Instagram 로그인 디자인 테마 미리보기</title>
+    <style>
+        body {
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        .theme-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            width: min(100% - 32px, 760px);
+            margin: 22px auto 0;
+            padding: 16px 18px;
+            border: 1px solid rgba(120, 126, 150, 0.22);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.82);
+            box-shadow: 0 8px 28px rgba(45, 51, 85, 0.09);
+            color: #22243A;
+            position: relative;
+            z-index: 2;
+        }
+
+        .theme-toolbar__copy {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .theme-toolbar__eyebrow {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #77758D;
+        }
+
+        .theme-toolbar__title {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+
+        .theme-toolbar__control {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            min-width: 210px;
+        }
+
+        .theme-toolbar__control label {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .theme-toolbar__control select {
+            width: 100%;
+            min-height: 42px;
+            padding: 0 34px 0 12px;
+            border: 1px solid #B9BED0;
+            border-radius: 9px;
+            background-color: #FFFFFF;
+            color: #22243A;
+            font: inherit;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .theme-description {
+            width: min(100% - 32px, 760px);
+            margin: 10px auto 0;
+            color: #555A70;
+            font-size: 1.3rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 520px) {
+            .theme-toolbar {
+                align-items: stretch;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 12px;
+                padding: 14px;
+            }
+
+            .theme-toolbar__control {
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="theme-toolbar">
+        <div class="theme-toolbar__copy">
+            <span class="theme-toolbar__eyebrow">Theme preview</span>
+            <h1 class="theme-toolbar__title">로그인 디자인 미리보기</h1>
+        </div>
+
+        <div class="theme-toolbar__control">
+            <label for="theme-select">디자인 테마 선택</label>
+            <select id="theme-select" name="theme">
+                <option value="glassmorphism.css" data-description="반투명한 유리 패널, 부드러운 블러와 파스텔 빛 번짐">Glassmorphism</option>
+                <option value="neo-brutalism.css" data-description="굵은 검정 테두리, 선명한 컬러와 단단한 그림자">Neo Brutalism</option>
+                <option value="editorial.css" data-description="아이보리 색감, 세리프 제목과 절제된 여백">Editorial</option>
+                <option value="y2k-chrome.css" data-description="메탈릭 실버, 크롬 그라데이션과 Y2K 파스텔 포인트">Y2K Chrome</option>
+            </select>
+        </div>
+    </header>
+
+    <p class="theme-description" id="theme-description" aria-live="polite">
+        반투명한 유리 패널, 부드러운 블러와 파스텔 빛 번짐
+    </p>
+
+    <div id="wrap">
+        <main class="instagram_login">
+            <section class="login_area" aria-labelledby="login_title">
+                <div class="instagram_logo">
+                    <img src="img/instagram_icon.svg" alt="Instagram">
+                </div>
+
+                <hr class="divider">
+
+                <h2 id="login_title">Instagram으로 로그인</h2>
+
+                <form action="" method="post">
+                    <fieldset>
+                        <legend class="sr-only">Instagram 로그인</legend>
+
+                        <div class="input_box">
+                            <label for="user_id" class="sr-only">
+                                휴대폰 번호, 사용자 이름 또는 이메일 주소
+                            </label>
+                            <input
+                                type="text"
+                                id="user_id"
+                                name="user_id"
+                                placeholder="휴대폰 번호, 사용자 이름 또는 이메일 주소"
+                                autocomplete="username"
+                            >
+                        </div>
+
+                        <div class="input_box">
+                            <label for="password" class="sr-only">비밀번호</label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="비밀번호"
+                                autocomplete="current-password"
+                            >
+                        </div>
+
+                        <button type="submit" class="login_btn">
+                            로그인
+                        </button>
+                    </fieldset>
+                </form>
+
+                <a href="#" class="forgot_link">비밀번호를 잊으셨나요?</a>
+            </section>
+
+            <section class="account_area" aria-label="계정 관련 메뉴">
+                <button type="button" class="facebook_btn">
+                    <img src="img/facebook_icon.svg" alt="">
+                    <span>Facebook으로 로그인</span>
+                </button>
+
+                <a href="#" class="signup_btn">새 계정 만들기</a>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const themeSelect = document.querySelector("#theme-select");
+        const themeStyle = document.querySelector("#theme-style");
+        const themeDescription = document.querySelector("#theme-description");
+
+        themeSelect.addEventListener("change", function () {
+            const selectedOption = themeSelect.options[themeSelect.selectedIndex];
+
+            themeStyle.href = selectedOption.value;
+            themeDescription.textContent = selectedOption.dataset.description;
+        });
+    </script>
+</body>
+</html>
