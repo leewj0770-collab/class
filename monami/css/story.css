@@ -1135,3 +1135,67 @@
         font-size: 14px;
     }
 }
+
+
+/* CEO 섹션: 배경은 화면 전체, 내부 콘텐츠는 공통 최대 너비로 정렬 */
+.about-page .about-section.ceo-section {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 100px 0;
+    background: var(--background-default);
+}
+
+.about-page .ceo-section-inner {
+    width: min(100%, 1720px);
+    margin: 0 auto;
+    padding: 0 clamp(32px, 5.35vw, 78px);
+    box-sizing: border-box;
+}
+
+.about-page .ceo-section .about-section-heading {
+    max-width: 760px;
+}
+
+.about-page .ceo-content {
+    align-items: stretch;
+}
+
+.about-page .ceo-image {
+    align-self: stretch;
+    border: 0;
+    border-top: 0;
+    border-bottom: 0;
+    box-shadow: none;
+}
+
+.about-page .ceo-image::before,
+.about-page .ceo-image::after {
+    display: none;
+    content: none;
+}
+
+.about-page .ceo-image img {
+    border: 0;
+    box-shadow: none;
+}
+
+@media (max-width: 760px) {
+    .about-page .about-section.ceo-section {
+        padding: 68px 0;
+    }
+
+    .about-page .ceo-section-inner {
+        padding: 0 24px;
+    }
+}
+
+@media (max-width: 560px) {
+    .about-page .about-section.ceo-section {
+        padding: 56px 0;
+    }
+
+    .about-page .ceo-section-inner {
+        padding: 0 20px;
+    }
+}
