@@ -1027,3 +1027,111 @@
         aspect-ratio: 1.2 / 1;
     }
 }
+
+
+/* 회사 연혁: 시대별 그룹과 연도별 사건 */
+.about-page .timeline-era-list {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.about-page .timeline-era {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+    gap: clamp(28px, 5vw, 72px);
+    padding-top: 32px;
+    border-top: 1px solid var(--border-default);
+}
+
+.about-page .timeline-era-heading h3 {
+    margin: 0 0 12px;
+    color: var(--text-primary);
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.035em;
+    word-break: keep-all;
+}
+
+.about-page .timeline-era-heading span {
+    color: var(--action-primary);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.about-page .timeline-events {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about-page .timeline-events li {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 22px;
+    padding: 0 0 20px;
+    border-bottom: 1px solid var(--border-default);
+}
+
+.about-page .timeline-events li + li {
+    padding-top: 20px;
+}
+
+.about-page .timeline-events time {
+    color: var(--action-primary);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+    font-variant-numeric: tabular-nums;
+}
+
+.about-page .timeline-events p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    word-break: keep-all;
+}
+
+@media (max-width: 760px) {
+    .about-page .timeline-era-list {
+        gap: 40px;
+    }
+
+    .about-page .timeline-era {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        padding-top: 26px;
+    }
+
+    .about-page .timeline-era-heading h3 {
+        margin-bottom: 8px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 560px) {
+    .about-page .timeline-era {
+        gap: 18px;
+    }
+
+    .about-page .timeline-events li {
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 14px;
+        padding-bottom: 16px;
+    }
+
+    .about-page .timeline-events li + li {
+        padding-top: 16px;
+    }
+
+    .about-page .timeline-events time,
+    .about-page .timeline-events p {
+        font-size: 14px;
+    }
+}
