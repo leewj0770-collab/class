@@ -1089,7 +1089,6 @@
     grid-template-columns: 64px minmax(0, 1fr);
     gap: 22px;
     padding: 0 0 20px;
-    border-bottom: 1px solid var(--border-default);
 }
 
 .about-page .timeline-events li + li {
