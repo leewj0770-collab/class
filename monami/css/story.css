@@ -558,9 +558,19 @@
 }
 
 .company-info-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    display: flex;
+    align-items: stretch;
     gap: clamp(32px, 6vw, 88px);
+}
+
+.company-info-layout .company-image {
+    flex: 1 1 50%;
+    min-width: 0;
+}
+
+.company-info-layout .company-info-list {
+    flex: 1 1 50%;
+    min-width: 0;
 }
 
 .company-info-intro h3 {
@@ -749,9 +759,13 @@
     }
 
     .ceo-content,
-    .brand-story-grid,
-    .company-info-layout {
+    .brand-story-grid {
         grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .company-info-layout {
+        flex-direction: column;
         gap: 30px;
     }
 
