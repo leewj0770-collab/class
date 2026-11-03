@@ -1259,6 +1259,10 @@
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.about-page .timeline-events li:first-child::before {
+    top: 7px;
+}
+
 .about-page .timeline-events li:hover::before {
     transform: scale(1.35);
     background: var(--action-primary);
