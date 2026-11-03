@@ -158,7 +158,7 @@ if (menuToggle && gnb) {
 const timelineEvents = document.querySelectorAll(".timeline-events li");
 
 if (timelineEvents.length && "IntersectionObserver" in window) {
-    document.body.classList.add("timeline-motion-enabled");
+    document.querySelector(".about-page").classList.add("timeline-motion-enabled");
 
     const timelineObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
