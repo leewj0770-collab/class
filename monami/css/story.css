@@ -1224,3 +1224,96 @@
     transform: scaleY(1.06);
     transform-origin: center;
 }
+
+
+/* 회사 연혁 인터렉션: 세로 타임라인과 원형 포인트 */
+.about-page .timeline-events {
+    position: relative;
+}
+
+.about-page .timeline-events::before {
+    position: absolute;
+    top: 8px;
+    bottom: 28px;
+    left: 75px;
+    width: 1px;
+    background: var(--border-default);
+    content: "";
+}
+
+.about-page .timeline-events li {
+    position: relative;
+}
+
+.about-page .timeline-events li::before {
+    position: absolute;
+    top: 7px;
+    left: 69px;
+    z-index: 1;
+    width: 13px;
+    height: 13px;
+    border: 2px solid var(--action-primary);
+    border-radius: 50%;
+    background: var(--background-default);
+    content: "";
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-page .timeline-events li:hover::before {
+    transform: scale(1.35);
+    background: var(--action-primary);
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--action-primary) 14%, transparent);
+}
+
+.about-page .timeline-events li:hover time {
+    color: var(--action-primary);
+}
+
+.about-page .timeline-events time,
+.about-page .timeline-events p {
+    transition: color 0.3s ease;
+}
+
+.about-page.timeline-motion-enabled .timeline-events li {
+    opacity: 0;
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.about-page.timeline-motion-enabled .timeline-events li time {
+    transform: translateX(-22px);
+    transition: transform 0.65s ease, color 0.3s ease;
+}
+
+.about-page.timeline-motion-enabled .timeline-events li p {
+    transform: translateX(22px);
+    transition: transform 0.65s ease, color 0.3s ease;
+}
+
+.about-page.timeline-motion-enabled .timeline-events li.is-visible {
+    opacity: 1;
+}
+
+.about-page.timeline-motion-enabled .timeline-events li.is-visible time,
+.about-page.timeline-motion-enabled .timeline-events li.is-visible p {
+    transform: translateX(0);
+}
+
+@media (max-width: 560px) {
+    .about-page .timeline-events::before {
+        left: 59px;
+    }
+
+    .about-page .timeline-events li::before {
+        left: 53px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-page.timeline-motion-enabled .timeline-events li,
+    .about-page.timeline-motion-enabled .timeline-events li time,
+    .about-page.timeline-motion-enabled .timeline-events li p,
+    .about-page .timeline-events li::before {
+        transition: none;
+        transform: none;
+    }
+}
