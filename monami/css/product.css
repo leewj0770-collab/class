@@ -50,7 +50,7 @@
     min-height: 48px;
     border-bottom: 1px solid #aaa;
     color: #777;
-    font-size: 14px;
+    font-size: 16px;
     text-decoration: none;
     transition: color 0.2s ease;
 }
@@ -67,7 +67,7 @@
 
 .product-category small {
     color: #888;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .category-arrow {
@@ -80,7 +80,7 @@
     border-radius: 50%;
     background: #858585;
     color: #fff;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1;
     padding: 0;
     box-sizing: border-box;
@@ -141,7 +141,7 @@
 .product-card h3 {
     margin: 14px 0 6px;
     color: #222;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     line-height: 1.45;
     word-break: keep-all;
@@ -152,7 +152,7 @@
     align-items: center;
     gap: 5px;
     color: #888;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.5;
     text-decoration: none;
 }
@@ -224,7 +224,7 @@
 
     .product-card h3 {
         margin-top: 10px;
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
