@@ -59,7 +59,7 @@
     border: 1px solid #bdbdbd;
     border-radius: 999px;
     color: #111;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1;
     text-decoration: none;
     transition: background-color 0.2s ease, color 0.2s ease;
@@ -80,7 +80,7 @@
     border-radius: 50%;
     background: #222;
     color: #fff;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .story-more:hover .story-more-icon,
@@ -151,7 +151,7 @@
 .story-footer {
     padding: 20px 5.35vw;
     color: #777;
-    font-size: 12px;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -253,7 +253,7 @@
     margin: 0 auto;
     padding: 22px clamp(32px, 5.35vw, 78px);
     color: var(--text-secondary);
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.5;
 }
 
@@ -286,7 +286,7 @@
 .about-eyebrow {
     margin: 0 0 18px;
     color: var(--action-primary);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 0.12em;
     line-height: 1.5;
@@ -339,13 +339,13 @@
 
 .about-image-placeholder > span:not(.placeholder-mark) {
     color: var(--text-primary);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 
 .about-image-placeholder small {
     color: var(--text-secondary);
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.5;
 }
 
@@ -435,7 +435,7 @@
 
 .ceo-signature span {
     color: var(--text-secondary);
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .ceo-signature strong {
@@ -447,7 +447,7 @@
 .content-note {
     margin-top: 18px;
     color: var(--text-secondary);
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.7;
 }
 
@@ -487,7 +487,7 @@
     padding: 6px 4px;
     border-bottom: 1px solid var(--border-strong);
     color: var(--text-primary);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     transition: color 0.2s ease, border-color 0.2s ease;
 }
@@ -543,7 +543,7 @@
 
 .history-feature-copy p {
     color: var(--text-secondary);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.8;
 }
 
@@ -585,7 +585,7 @@
 .company-info-intro > p {
     margin-bottom: 28px;
     color: var(--text-secondary);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.8;
 }
 
@@ -609,14 +609,14 @@
 
 .company-info-list dt {
     color: var(--text-primary);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 
 .company-info-list dd {
     min-width: 0;
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.7;
     overflow-wrap: anywhere;
 }
@@ -624,7 +624,7 @@
 .company-info-list .content-note {
     display: block;
     margin-top: 4px;
-    font-size: 11px;
+    font-size: 16px;
 }
 
 .timeline-section {
@@ -686,13 +686,13 @@
 
 .timeline-detail p {
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
 }
 
 .timeline-placeholder .timeline-year {
     color: var(--text-secondary);
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
 }
 
@@ -833,7 +833,7 @@
     }
 
     .about-section-heading > p:last-child {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .ceo-image {
@@ -846,7 +846,7 @@
 
     .ceo-copy > p:not(.ceo-lead):not(.content-note),
     .brand-story-copy > p:not(.brand-story-quote) {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .brand-story-image {
@@ -884,7 +884,7 @@
     }
 
     .timeline-year {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .timeline-detail h3 {
@@ -892,7 +892,7 @@
     }
 
     .timeline-detail p {
-        font-size: 13px;
+        font-size: 16px;
     }
 }
 
@@ -1070,7 +1070,7 @@
 
 .about-page .timeline-era-heading span {
     color: var(--action-primary);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.02em;
 }
@@ -1097,7 +1097,7 @@
 
 .about-page .timeline-events time {
     color: var(--action-primary);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.8;
     font-variant-numeric: tabular-nums;
@@ -1106,7 +1106,7 @@
 .about-page .timeline-events p {
     margin: 0 0 0 16px;
     color: var(--text-secondary);
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.8;
     word-break: keep-all;
 }
@@ -1145,7 +1145,7 @@
 
     .about-page .timeline-events time,
     .about-page .timeline-events p {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
 
