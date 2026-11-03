@@ -57,7 +57,7 @@
     border: 1px solid #ddd;
     border-radius: 999px;
     color: #111;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1;
     text-decoration: none;
     transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
@@ -128,7 +128,7 @@
 
 .news-section .news-date {
     color: #888;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.4;
 }
 
@@ -178,7 +178,7 @@
     }
 
     .news-section .news-item-title {
-        font-size: 15px;
+        font-size: 16px;
     }
 }
 
@@ -207,11 +207,11 @@
     }
 
     .news-section .news-item-title {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .news-section .news-date {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
