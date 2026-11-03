@@ -1247,7 +1247,7 @@
 
 .about-page .timeline-events li::before {
     position: absolute;
-    top: 7px;
+    top: 25px;
     left: 69px;
     z-index: 1;
     width: 13px;
