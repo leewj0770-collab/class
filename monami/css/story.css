@@ -891,3 +891,91 @@
         animation: none;
     }
 }
+
+
+/* 상세페이지 이미지 비율 및 크기 정리 */
+.about-page .about-hero-image,
+.about-page .ceo-image,
+.about-page .brand-story-image,
+.about-page .company-image {
+    min-width: 0;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    border-radius: 14px;
+    background: var(--surface-secondary);
+}
+
+.about-page .about-hero-image img,
+.about-page .ceo-image img,
+.about-page .brand-story-image img,
+.about-page .company-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-page .about-hero-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1.45 / 1;
+}
+
+.about-page .ceo-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 0.88 / 1;
+}
+
+.about-page .brand-story-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1 / 1.05;
+}
+
+.about-page .company-image {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1.5 / 1;
+}
+
+@media (max-width: 1024px) {
+    .about-page .about-hero-image {
+        aspect-ratio: 1.3 / 1;
+    }
+}
+
+@media (max-width: 760px) {
+    .about-page .ceo-image {
+        width: 100%;
+        max-width: 520px;
+        aspect-ratio: 1.2 / 1;
+    }
+
+    .about-page .brand-story-image {
+        aspect-ratio: 1.2 / 1;
+    }
+
+    .about-page .company-image {
+        aspect-ratio: 1.5 / 1;
+    }
+}
+
+@media (max-width: 560px) {
+    .about-page .about-hero-image {
+        aspect-ratio: 1.25 / 1;
+    }
+
+    .about-page .ceo-image {
+        aspect-ratio: 1.15 / 1;
+    }
+
+    .about-page .brand-story-image {
+        aspect-ratio: 1.15 / 1;
+    }
+
+    .about-page .company-image {
+        aspect-ratio: 1.35 / 1;
+    }
+}
