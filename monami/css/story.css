@@ -1199,3 +1199,14 @@
         padding: 0 20px;
     }
 }
+
+
+/* CEO 사진의 위·아래 가장자리를 확대 크롭해 이미지에 포함된 선을 숨김 */
+.about-page .ceo-image {
+    overflow: hidden;
+}
+
+.about-page .ceo-image img {
+    transform: scaleY(1.06);
+    transform-origin: center;
+}
