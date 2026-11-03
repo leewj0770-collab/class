@@ -152,3 +152,27 @@ if (menuToggle && gnb) {
         }
     });
 }
+
+
+// 회사 연혁: 스크롤 위치에 맞춰 항목을 좌우에서 부드럽게 표시합니다.
+const timelineEvents = document.querySelectorAll(".timeline-events li");
+
+if (timelineEvents.length && "IntersectionObserver" in window) {
+    document.body.classList.add("timeline-motion-enabled");
+
+    const timelineObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
+    });
+
+    timelineEvents.forEach((item) => timelineObserver.observe(item));
+} else {
+    timelineEvents.forEach((item) => item.classList.add("is-visible"));
+}
