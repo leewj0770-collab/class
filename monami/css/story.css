@@ -1320,3 +1320,39 @@
         transform: none;
     }
 }
+
+
+/* 서브 페이지 본문 타이포그래피: 본문 최소 16px */
+.about-page .about-hero-copy > p:last-child,
+.about-page .about-section-heading > p:last-child,
+.about-page .ceo-copy > p:not(.ceo-lead),
+.about-page .ceo-signature span,
+.about-page .brand-story-copy > p,
+.about-page .company-info-list dt,
+.about-page .company-info-list dd,
+.about-page .timeline-era-heading span,
+.about-page .timeline-events time,
+.about-page .timeline-events p {
+    font-size: 16px;
+}
+
+.about-page .content-note {
+    font-size: 16px;
+}
+
+.about-page .about-hero h2 {
+    font-size: clamp(36px, 4vw, 58px);
+}
+
+.about-page .about-section-heading h2 {
+    font-size: clamp(30px, 3vw, 40px);
+}
+
+.about-page .ceo-lead,
+.about-page .brand-story-quote {
+    font-size: clamp(24px, 2.2vw, 30px);
+}
+
+.about-page .timeline-era-heading h3 {
+    font-size: clamp(20px, 2vw, 24px);
+}
