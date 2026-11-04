@@ -159,34 +159,53 @@
     .product-page-nav a, .product-page-image img { transition: none; }
 }
 
-/* 제품소개 탭 게시판 */
-.product-page-nav {
-    width: min(calc(100% - 40px), 720px);
-    margin: 34px auto 0;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    border: 1px solid var(--border-default, #E3E3DF);
-    border-radius: 999px;
-    overflow: hidden;
+
+/* 게시판형 갤러리 페이지네이션 */
+.product-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 54px;
 }
-.product-page-nav button {
-    min-height: 64px;
-    padding: 12px 18px;
-    border: 0;
-    background: transparent;
-    color: var(--text-secondary, #70706C);
+.product-pagination-pages {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.product-pagination button {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #D9D9D9;
+    background: #fff;
+    color: #888;
     font: inherit;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
     cursor: pointer;
-    transition: color .2s ease, background-color .2s ease;
+    transition: border-color .2s ease, color .2s ease, background-color .2s ease;
 }
-.product-page-nav button + button { border-left: 1px solid var(--border-default, #E3E3DF); }
-.product-page-nav button:hover { color: var(--action-primary, #D93636); }
-.product-page-nav button.is-active {
-    background: var(--action-primary, #D93636);
-    color: #fff;
+.product-pagination .product-page-number.is-current {
+    border-color: var(--action-primary, #D93636);
+    color: var(--action-primary, #D93636);
+    font-weight: 600;
 }
-.product-page-nav button:focus-visible { outline: 2px solid var(--action-primary, #D93636); outline-offset: -4px; }
-.product-list-section[hidden] { display: none; }
-.product-page-nav a { display: none; }
+.product-pagination button:hover:not(:disabled) {
+    border-color: var(--action-primary, #D93636);
+    color: var(--action-primary, #D93636);
+}
+.product-pagination button:disabled {
+    color: #aaa;
+    background: #fff;
+    cursor: default;
+}
+.product-pagination button:focus-visible {
+    outline: 2px solid var(--action-primary, #D93636);
+    outline-offset: 3px;
+}
+@media (max-width: 680px) {
+    .product-pagination { margin-top: 38px; }
+    .product-pagination button { width: 38px; height: 38px; }
+}
