@@ -77,13 +77,7 @@
                 <span aria-current="page">제품소개</span>
             </nav>
 
-            <div class="product-page-nav" role="tablist" aria-label="제품 카테고리">
-                <button class="is-active" id="tab-representative" type="button" role="tab" aria-selected="true" aria-controls="representative" data-product-tab="representative">대표상품</button>
-                <button id="tab-new-products" type="button" role="tab" aria-selected="false" aria-controls="new-products" data-product-tab="new-products" tabindex="-1">신상품</button>
-                <button id="tab-popular-products" type="button" role="tab" aria-selected="false" aria-controls="popular-products" data-product-tab="popular-products" tabindex="-1">인기상품</button>
-            </div>
-
-            <section class="product-list-section" id="representative" role="tabpanel" aria-labelledby="representative-title">
+            <section class="product-list-section" id="representative" aria-labelledby="representative-title">
                 <div class="product-section-heading">
                     <div>
                         <h2 id="representative-title">대표상품</h2>
@@ -104,9 +98,10 @@
                         <div class="product-card-copy"><h3>FX ZETA PEAK</h3><p>대표상품</p></div>
                     </article>
                 </div>
+                <nav class="product-pagination" aria-label="대표상품 페이지"></nav>
             </section>
 
-            <section class="product-list-section product-list-muted" id="new-products" role="tabpanel" hidden aria-labelledby="new-products-title">
+            <section class="product-list-section product-list-muted" id="new-products">
                 <div class="product-section-heading">
                     <div>
                         <h2 id="new-products-title">신상품</h2>
@@ -127,9 +122,10 @@
                         <div class="product-card-copy"><h3>FX ZETA 에프엑스 제타 10색 세트</h3><p>신상품</p></div>
                     </article>
                 </div>
+                <nav class="product-pagination" aria-label="신상품 페이지"></nav>
             </section>
 
-            <section class="product-list-section" id="popular-products" role="tabpanel" hidden aria-labelledby="popular-products-title">
+            <section class="product-list-section" id="popular-products">
                 <div class="product-section-heading">
                     <div>
                         <h2 id="popular-products-title">인기상품</h2>
@@ -150,6 +146,7 @@
                         <div class="product-card-copy"><h3>153 스틱</h3><p>인기상품</p></div>
                     </article>
                 </div>
+                <nav class="product-pagination" aria-label="인기상품 페이지"></nav>
             </section>
         </main>
 
