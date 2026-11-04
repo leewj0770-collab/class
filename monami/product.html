@@ -77,19 +77,18 @@
                 <span aria-current="page">제품소개</span>
             </nav>
 
-            <nav class="product-page-nav" aria-label="제품 카테고리">
-                <a href="#representative">대표상품</a>
-                <a href="#new-products">신상품</a>
-                <a href="#popular-products">인기상품</a>
-            </nav>
+            <div class="product-page-nav" role="tablist" aria-label="제품 카테고리">
+                <button class="is-active" id="tab-representative" type="button" role="tab" aria-selected="true" aria-controls="representative" data-product-tab="representative">대표상품</button>
+                <button id="tab-new-products" type="button" role="tab" aria-selected="false" aria-controls="new-products" data-product-tab="new-products" tabindex="-1">신상품</button>
+                <button id="tab-popular-products" type="button" role="tab" aria-selected="false" aria-controls="popular-products" data-product-tab="popular-products" tabindex="-1">인기상품</button>
+            </div>
 
-            <section class="product-list-section" id="representative" aria-labelledby="representative-title">
+            <section class="product-list-section" id="representative" role="tabpanel" aria-labelledby="tab-representative" aria-labelledby="representative-title">
                 <div class="product-section-heading">
                     <div>
                         <h2 id="representative-title">대표상품</h2>
                         <p>모나미를 대표하는 제품을 소개합니다.</p>
                     </div>
-                    <button class="product-more-button" type="button">대표상품 보러가기 <span class="story-more-icon" aria-hidden="true">➜</span></button>
                 </div>
                 <div class="product-page-grid">
                     <article class="product-page-card">
@@ -107,13 +106,12 @@
                 </div>
             </section>
 
-            <section class="product-list-section product-list-muted" id="new-products" aria-labelledby="new-products-title">
+            <section class="product-list-section product-list-muted" id="new-products" role="tabpanel" aria-labelledby="tab-new-products" hidden aria-labelledby="new-products-title">
                 <div class="product-section-heading">
                     <div>
                         <h2 id="new-products-title">신상품</h2>
                         <p>새롭게 선보이는 제품을 소개하는 영역입니다.</p>
                     </div>
-                    <button class="product-more-button" type="button">신상품 보러가기 <span class="story-more-icon" aria-hidden="true">➜</span></button>
                 </div>
                 <div class="product-page-grid">
                     <article class="product-page-card">
@@ -131,13 +129,12 @@
                 </div>
             </section>
 
-            <section class="product-list-section" id="popular-products" aria-labelledby="popular-products-title">
+            <section class="product-list-section" id="popular-products" role="tabpanel" aria-labelledby="tab-popular-products" hidden aria-labelledby="popular-products-title">
                 <div class="product-section-heading">
                     <div>
                         <h2 id="popular-products-title">인기상품</h2>
                         <p>많은 사랑을 받는 제품을 소개하는 영역입니다.</p>
                     </div>
-                    <button class="product-more-button" type="button">인기상품 보러가기 <span class="story-more-icon" aria-hidden="true">➜</span></button>
                 </div>
                 <div class="product-page-grid">
                     <article class="product-page-card">
