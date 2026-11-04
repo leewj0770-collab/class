@@ -77,7 +77,13 @@
                 <span aria-current="page">제품소개</span>
             </nav>
 
-            <section class="product-list-section" id="representative" aria-labelledby="representative-title">
+            <div class="product-page-nav" role="tablist" aria-label="제품 카테고리">
+                <button class="is-active" id="tab-representative" type="button" role="tab" aria-selected="true" aria-controls="representative" data-product-tab="representative">대표상품</button>
+                <button id="tab-new-products" type="button" role="tab" aria-selected="false" aria-controls="new-products" data-product-tab="new-products" tabindex="-1">신상품</button>
+                <button id="tab-popular-products" type="button" role="tab" aria-selected="false" aria-controls="popular-products" data-product-tab="popular-products" tabindex="-1">인기상품</button>
+            </div>
+
+            <section class="product-list-section" id="representative" role="tabpanel" aria-labelledby="tab-representative" aria-labelledby="representative-title">
                 <div class="product-section-heading">
                     <div>
                         <h2 id="representative-title">대표상품</h2>
@@ -101,7 +107,7 @@
                 <nav class="product-pagination" aria-label="대표상품 페이지"></nav>
             </section>
 
-            <section class="product-list-section product-list-muted" id="new-products">
+            <section class="product-list-section product-list-muted" id="new-products" role="tabpanel" aria-labelledby="tab-new-products" hidden>
                 <div class="product-section-heading">
                     <div>
                         <h2 id="new-products-title">신상품</h2>
@@ -125,7 +131,7 @@
                 <nav class="product-pagination" aria-label="신상품 페이지"></nav>
             </section>
 
-            <section class="product-list-section" id="popular-products">
+            <section class="product-list-section" id="popular-products" role="tabpanel" aria-labelledby="tab-popular-products" hidden>
                 <div class="product-section-heading">
                     <div>
                         <h2 id="popular-products-title">인기상품</h2>
