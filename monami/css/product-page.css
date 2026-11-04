@@ -45,27 +45,49 @@
 .product-section-heading { margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
 .product-section-heading h2 { margin: 0; color: var(--text-primary, #222); font-size: 32px; font-weight: 700; line-height: 1.35; letter-spacing: -.04em; }
 .product-section-heading > div > p:last-child { margin: 10px 0 0; color: var(--text-secondary, #70706C); font-size: 16px; line-height: 1.6; }
+/* 메인 페이지의 '자세히보기(story-more)' 버튼과 동일한 디자인 */
 .product-more-button {
     flex: 0 0 auto;
-    min-height: 46px;
-    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-width: 108px;
+    min-height: 34px;
+    padding: 14px 26px;
+    border: 1px solid #bdbdbd;
+    border-radius: 999px;
+    background: transparent;
+    color: #111;
+    font: inherit;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.product-more-button:hover,
+.product-more-button:focus-visible {
+    background: #111;
+    color: #fff;
+}
+.product-more-button .story-more-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    border: 1px solid var(--border-default, #D8D8D4);
-    border-radius: 999px;
-    background: transparent;
-    color: var(--text-primary, #222);
-    font: inherit;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #222;
+    color: #fff;
     font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: border-color .2s ease, color .2s ease, background-color .2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
-.product-more-button:hover { border-color: var(--action-primary, #D93636); color: var(--action-primary, #D93636); background: var(--accent-subtle, #FCECEC); }
-.product-more-button:focus-visible { outline: 2px solid var(--action-primary, #D93636); outline-offset: 4px; }
-.product-more-button span { font-size: 18px; }
+.product-more-button:hover .story-more-icon,
+.product-more-button:focus-visible .story-more-icon {
+    background: #fff;
+    color: #111;
+}
 .product-page-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.2vw, 30px); }
 .product-page-card { min-width: 0; }
 .product-page-image {
