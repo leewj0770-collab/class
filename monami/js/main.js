@@ -178,39 +178,72 @@ if (timelineEvents.length && "IntersectionObserver" in window) {
 }
 
 
-// 제품소개 탭: 선택한 상품 분류만 게시판처럼 표시합니다.
-const productTabButtons = document.querySelectorAll("[data-product-tab]");
-const productTabPanels = document.querySelectorAll(".product-list-section[role='tabpanel']");
+// 제품소개 갤러리: 카테고리별로 3개씩 표시하고 페이지를 전환합니다.
+const productSections = document.querySelectorAll(".product-list-section");
 
-if (productTabButtons.length && productTabPanels.length) {
-    const activateProductTab = (button, moveFocus = false) => {
-        const targetId = button.dataset.productTab;
+productSections.forEach((section) => {
+    const cards = Array.from(section.querySelectorAll(".product-page-card"));
+    const pagination = section.querySelector(".product-pagination");
+    if (!cards.length || !pagination) return;
 
-        productTabButtons.forEach((tab) => {
-            const selected = tab === button;
-            tab.classList.toggle("is-active", selected);
-            tab.setAttribute("aria-selected", String(selected));
-            tab.tabIndex = selected ? 0 : -1;
+    const itemsPerPage = 3;
+    const totalPages = Math.ceil(cards.length / itemsPerPage);
+    let currentPage = 1;
+
+    const renderPage = () => {
+        cards.forEach((card, index) => {
+            const firstVisibleIndex = (currentPage - 1) * itemsPerPage;
+            card.hidden = index < firstVisibleIndex || index >= firstVisibleIndex + itemsPerPage;
         });
 
-        productTabPanels.forEach((panel) => {
-            panel.hidden = panel.id !== targetId;
+        pagination.innerHTML = "";
+
+        const previousButton = document.createElement("button");
+        previousButton.type = "button";
+        previousButton.className = "product-page-arrow";
+        previousButton.textContent = "<";
+        previousButton.setAttribute("aria-label", "이전 페이지");
+        previousButton.disabled = currentPage === 1;
+        previousButton.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage -= 1;
+                renderPage();
+            }
         });
 
-        if (moveFocus) button.focus();
+        const pageNumbers = document.createElement("div");
+        pageNumbers.className = "product-pagination-pages";
+
+        for (let page = 1; page <= totalPages; page += 1) {
+            const pageButton = document.createElement("button");
+            pageButton.type = "button";
+            pageButton.className = "product-page-number";
+            pageButton.textContent = String(page);
+            pageButton.setAttribute("aria-label", page + "페이지");
+            pageButton.setAttribute("aria-current", page === currentPage ? "page" : "false");
+            if (page === currentPage) pageButton.classList.add("is-current");
+            pageButton.addEventListener("click", () => {
+                currentPage = page;
+                renderPage();
+            });
+            pageNumbers.appendChild(pageButton);
+        }
+
+        const nextButton = document.createElement("button");
+        nextButton.type = "button";
+        nextButton.className = "product-page-arrow";
+        nextButton.textContent = ">";
+        nextButton.setAttribute("aria-label", "다음 페이지");
+        nextButton.disabled = currentPage === totalPages;
+        nextButton.addEventListener("click", () => {
+            if (currentPage < totalPages) {
+                currentPage += 1;
+                renderPage();
+            }
+        });
+
+        pagination.append(previousButton, pageNumbers, nextButton);
     };
 
-    productTabButtons.forEach((button, index) => {
-        button.addEventListener("click", () => activateProductTab(button));
-        button.addEventListener("keydown", (event) => {
-            if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
-            event.preventDefault();
-            let nextIndex = index;
-            if (event.key === "ArrowRight") nextIndex = (index + 1) % productTabButtons.length;
-            if (event.key === "ArrowLeft") nextIndex = (index - 1 + productTabButtons.length) % productTabButtons.length;
-            if (event.key === "Home") nextIndex = 0;
-            if (event.key === "End") nextIndex = productTabButtons.length - 1;
-            activateProductTab(productTabButtons[nextIndex], true);
-        });
-    });
-}
+    renderPage();
+});
