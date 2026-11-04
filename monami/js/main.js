@@ -176,3 +176,41 @@ if (timelineEvents.length && "IntersectionObserver" in window) {
 } else {
     timelineEvents.forEach((item) => item.classList.add("is-visible"));
 }
+
+
+// 제품소개 탭: 선택한 상품 분류만 게시판처럼 표시합니다.
+const productTabButtons = document.querySelectorAll("[data-product-tab]");
+const productTabPanels = document.querySelectorAll(".product-list-section[role='tabpanel']");
+
+if (productTabButtons.length && productTabPanels.length) {
+    const activateProductTab = (button, moveFocus = false) => {
+        const targetId = button.dataset.productTab;
+
+        productTabButtons.forEach((tab) => {
+            const selected = tab === button;
+            tab.classList.toggle("is-active", selected);
+            tab.setAttribute("aria-selected", String(selected));
+            tab.tabIndex = selected ? 0 : -1;
+        });
+
+        productTabPanels.forEach((panel) => {
+            panel.hidden = panel.id !== targetId;
+        });
+
+        if (moveFocus) button.focus();
+    };
+
+    productTabButtons.forEach((button, index) => {
+        button.addEventListener("click", () => activateProductTab(button));
+        button.addEventListener("keydown", (event) => {
+            if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+            event.preventDefault();
+            let nextIndex = index;
+            if (event.key === "ArrowRight") nextIndex = (index + 1) % productTabButtons.length;
+            if (event.key === "ArrowLeft") nextIndex = (index - 1 + productTabButtons.length) % productTabButtons.length;
+            if (event.key === "Home") nextIndex = 0;
+            if (event.key === "End") nextIndex = productTabButtons.length - 1;
+            activateProductTab(productTabButtons[nextIndex], true);
+        });
+    });
+}
