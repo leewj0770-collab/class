@@ -284,3 +284,28 @@ productSections.forEach((section) => {
 
     renderPage();
 });
+
+// 153 골드 상세 페이지: 등록된 색상 이미지를 선택하면 큰 제품 이미지가 바뀝니다.
+const productColorOptions = document.querySelectorAll(".product-color-option[data-image]");
+const productMainImage = document.querySelector("#product-main-image");
+
+if (productColorOptions.length && productMainImage) {
+    productColorOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+            if (option.disabled) return;
+
+            const imagePath = option.dataset.image;
+            if (!imagePath) return;
+
+            productMainImage.src = imagePath;
+            productMainImage.alt = option.dataset.alt || "153 골드 제품 이미지";
+
+            productColorOptions.forEach((item) => {
+                const selected = item === option;
+                item.classList.toggle("is-selected", selected);
+                item.setAttribute("aria-pressed", String(selected));
+            });
+        });
+    });
+}
+
