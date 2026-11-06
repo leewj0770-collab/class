@@ -37,7 +37,7 @@
     justify-content: center;
     overflow: hidden;
     border-radius: 20px;
-    background: var(--surface-secondary);
+    background: var(--surface-default);
 }
 .product-detail-main-image img {
     display: block;
