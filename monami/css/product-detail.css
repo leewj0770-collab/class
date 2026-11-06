@@ -150,6 +150,17 @@
 }
 .product-detail-spec dt { color: var(--text-secondary, #70706C); }
 .product-detail-spec dd { margin: 0; color: var(--text-primary, #222); }
+.product-detail-color-swatches {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.product-detail-color-swatches img {
+    display: block;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
 .product-detail-notice {
     margin: 22px 0 30px;
     color: var(--text-secondary, #70706C);
