@@ -133,20 +133,13 @@
 .product-detail-block { padding: 26px 0; border-bottom: 1px solid var(--border-default); }
 .product-detail-block ul { margin: 0; padding: 0; list-style: none; }
 .product-detail-block li {
-    position: relative;
-    padding-left: 16px;
+    padding-left: 0;
     color: var(--text-secondary);
     font-size: 16px;
     line-height: 1.7;
 }
 .product-detail-block li::before {
-    content: "";
-    position: absolute;
-    top: .72em;
-    left: 0;
-    width: 5px;
-    height: 5px;
-    background: var(--action-primary);
+    content: none;
 }
 .product-detail-spec { padding-bottom: 0; border-bottom: 0; }
 .product-detail-spec dl { margin: 0; }
