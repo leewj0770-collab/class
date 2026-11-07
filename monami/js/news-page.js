@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (moveFocus) button.focus();
     };
 
+    const activateNewsTabFromHash = () => {
+        const targetId = window.location.hash.slice(1);
+        const targetButton = tabButtons.find((button) => button.dataset.newsTab === targetId);
+        if (targetButton) activateTab(targetButton);
+    };
+
     tabButtons.forEach((button, index) => {
         button.addEventListener("click", () => activateTab(button));
         button.addEventListener("keydown", (event) => {
@@ -35,6 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
             activateTab(tabButtons[nextIndex], true);
         });
     });
+
+    // 헤더 서브 메뉴의 주소(#video-library 등)에 맞춰 해당 탭을 엽니다.
+    activateNewsTabFromHash();
+    window.addEventListener("hashchange", activateNewsTabFromHash);
 
     // 각 탭의 갤러리는 한 페이지에 3개씩 보여줍니다.
     tabPanels.forEach((panel) => {
