@@ -6,8 +6,7 @@
 .support-eyebrow { margin:0 0 16px; color:var(--action-primary); font-size:12px; font-weight:700; letter-spacing:.14em; }
 .support-hero h2 { margin:0; font-size:clamp(32px, 4vw, 52px); font-weight:600; letter-spacing:-.05em; }
 .support-hero p:last-child { margin:18px 0 0; color:var(--text-secondary); font-size:17px; line-height:1.7; }
-.support-hero-mark { display:flex; align-items:center; justify-content:center; width:clamp(190px, 26vw, 340px); flex:0 0 auto; opacity:.10; pointer-events:none; }
-.support-hero-mark img { display:block; width:100%; height:auto; object-fit:contain; }
+.support-hero-mark { color:rgba(217,54,54,.12); font-size:clamp(140px, 22vw, 280px); font-weight:800; line-height:.8; letter-spacing:-.1em; }
 .support-tabs { display:flex; gap:36px; margin:64px 0 48px; border-bottom:1px solid var(--border-default); }
 .support-tabs button { position:relative; padding:0 4px 18px; color:var(--text-secondary); font-size:18px; font-weight:500; }
 .support-tabs button.is-active { color:var(--text-primary); font-weight:700; }
@@ -48,7 +47,7 @@
  .support-page { width:calc(100% - 40px); padding-bottom:72px; }
  .support-breadcrumb { padding-top:22px; }
  .support-hero { min-height:240px; padding:36px 24px; border-radius:14px; }
- .support-hero-mark { position:absolute; right:12px; bottom:24px; width:190px; opacity:.08; }
+ .support-hero-mark { position:absolute; right:18px; bottom:24px; opacity:.7; }
  .support-hero h2 { position:relative; z-index:1; font-size:34px; }
  .support-hero p:last-child { position:relative; z-index:1; max-width:260px; font-size:15px; }
  .support-tabs { gap:24px; margin:48px 0 36px; }
