@@ -200,6 +200,14 @@ if (productTabButtons.length && productTabPanels.length) {
         if (moveFocus) button.focus();
     };
 
+    const activateProductTabFromHash = () => {
+        const targetId = window.location.hash.slice(1);
+        const targetButton = Array.from(productTabButtons).find(
+            (button) => button.dataset.productTab === targetId
+        );
+        if (targetButton) activateProductTab(targetButton);
+    };
+
     productTabButtons.forEach((button, index) => {
         button.addEventListener("click", () => activateProductTab(button));
         button.addEventListener("keydown", (event) => {
@@ -213,6 +221,10 @@ if (productTabButtons.length && productTabPanels.length) {
             activateProductTab(productTabButtons[nextIndex], true);
         });
     });
+
+    // 헤더 서브 메뉴의 주소(#new-products 등)에 맞춰 해당 탭을 엽니다.
+    activateProductTabFromHash();
+    window.addEventListener("hashchange", activateProductTabFromHash);
 }
 
 // 제품소개 갤러리: 카테고리별로 3개씩 표시하고 페이지를 전환합니다.
