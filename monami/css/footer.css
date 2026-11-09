@@ -60,6 +60,21 @@
     outline-offset: 4px;
 }
 
+.portfolio-notice {
+    margin: 0 0 24px;
+    padding: 14px 16px;
+    color: var(--text-secondary, #70706c);
+    background: var(--background-default, #f7f7f5);
+    border-left: 3px solid var(--action-primary, #d93636);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.footer-policy span {
+    color: inherit;
+    cursor: default;
+}
+
 .footer-body {
     display: flex;
     align-items: flex-start;
