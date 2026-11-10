@@ -222,3 +222,79 @@
         transition: none;
     }
 }
+
+
+/* 메인 뉴스와 공지사항 2단 구성 */
+.news-section {
+    height: auto;
+    min-height: 0;
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+.news-section .news-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.9fr);
+    gap: clamp(32px, 5vw, 80px);
+}
+.news-section .news-header {
+    align-items: flex-end;
+    min-height: 112px;
+}
+.news-section .news-eyebrow {
+    margin: 0 0 8px;
+    color: var(--text-secondary, #70706c);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+.news-section .news-more {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    color: var(--text-primary, #222);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.news-section .news-more:hover { color: var(--action-primary, #d93636); }
+.news-section .news-item > a { min-height: 94px; padding: 16px 8px; }
+.news-section .news-item-title { font-size: 15px; }
+.news-section .news-date { font-size: 13px; }
+.news-section .news-arrow { color: var(--text-secondary, #70706c); }
+.notice-empty {
+    display: flex;
+    min-height: 320px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 20px;
+    background: var(--background-default, #f7f7f5);
+    text-align: center;
+}
+.notice-mark {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-default, #e3e3df);
+    border-radius: 50%;
+    color: var(--action-primary, #d93636);
+    font-size: 20px;
+    font-weight: 600;
+}
+.notice-empty p { margin: 0 0 8px; color: var(--text-primary, #222); font-size: 16px; font-weight: 600; }
+.notice-empty > span:last-child { color: var(--text-secondary, #70706c); font-size: 13px; line-height: 1.6; }
+.news-notice-section { padding: 64px 0 100px; border-top: 1px solid #e5e5e5; }
+.news-notice-empty { display:flex; min-height:260px; flex-direction:column; align-items:center; justify-content:center; padding:32px; background:#f7f7f5; text-align:center; }
+.news-notice-empty h3 { margin:0 0 8px; font-size:18px; }
+.news-notice-empty p { margin:0; color:#777; font-size:14px; }
+@media (max-width: 760px) {
+    .news-section { padding: 56px 24px 48px; }
+    .news-section .news-inner { grid-template-columns: 1fr; gap: 48px; }
+    .news-section .news-header { min-height: 0; }
+    .notice-empty { min-height: 220px; }
+    .news-notice-section { padding: 48px 0 64px; }
+}
