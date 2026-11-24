@@ -188,3 +188,13 @@
 @media (prefers-reduced-motion: reduce) {
     .news-page-nav button,.news-gallery-image,.news-pagination button { transition: none; }
 }
+
+
+/* 동영상 자료 1번 플레이어 */
+.news-gallery-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
