@@ -111,50 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
         renderPage();
     });
 
-    // 첫 번째 동영상 썸네일을 누르면 영상 팝업을 열어 재생합니다.
-    const videoLink = document.querySelector(".news-gallery-link[data-video-src]");
-    if (videoLink) {
-        const videoModal = document.createElement("div");
-        videoModal.className = "news-video-modal";
-        videoModal.hidden = true;
-        videoModal.innerHTML = `
-            <div class="news-video-modal__backdrop" data-video-close></div>
-            <div class="news-video-modal__dialog" role="dialog" aria-modal="true" aria-label="모나미 동영상 재생">
-                <button class="news-video-modal__close" type="button" aria-label="영상 닫기" data-video-close>×</button>
-                <video class="news-video-modal__player" controls playsinline preload="metadata">
-                    <source src="${videoLink.dataset.videoSrc}" type="video/mp4">
-                    브라우저가 동영상 재생을 지원하지 않습니다.
-                </video>
-            </div>
-        `;
-        document.body.appendChild(videoModal);
-
-        const player = videoModal.querySelector("video");
-        const closeVideo = () => {
-            videoModal.hidden = true;
-            player.pause();
-            player.currentTime = 0;
-            videoLink.focus();
-        };
-
-        videoLink.addEventListener("click", (event) => {
-            event.preventDefault();
-            videoModal.hidden = false;
-            player.play().catch(() => {
-                // 브라우저 정책상 자동 재생이 막히면 재생 버튼을 직접 누르면 됩니다.
-            });
-            videoModal.querySelector(".news-video-modal__close").focus();
-        });
-
-        videoModal.querySelectorAll("[data-video-close]").forEach((button) => {
-            button.addEventListener("click", closeVideo);
-        });
-
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && !videoModal.hidden) closeVideo();
-        });
-    }
-
     // 상세 페이지가 아직 없는 나머지 준비용 링크는 임시 이동을 막습니다.
     document.querySelectorAll(".news-gallery-link[href='#']:not([data-video-src])").forEach((link) => {
         link.addEventListener("click", (event) => event.preventDefault());
