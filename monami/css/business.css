@@ -227,3 +227,43 @@
         background-position: center;
     }
 }
+
+
+/* HERO 최종 보정: 뷰포트 전체 폭 배경 + 중앙 타이틀 */
+.business-page .business-hero {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100vw !important;
+    max-width: none !important;
+    min-height: clamp(480px, 62vw, 760px) !important;
+    margin-left: calc(50% - 50vw) !important;
+    padding: 80px 24px !important;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0 !important;
+    background:
+        linear-gradient(rgba(0, 0, 0, .34), rgba(0, 0, 0, .34)),
+        url("../img/quicklink-corporate.jpg") center / cover no-repeat !important;
+}
+.business-page .business-hero-copy {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    text-align: center !important;
+}
+.business-page .business-hero h2 {
+    margin: 0 !important;
+    color: #fff !important;
+    font-size: clamp(38px, 5.4vw, 76px) !important;
+    line-height: 1.25;
+    letter-spacing: -.055em;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, .22);
+}
+@media (max-width: 760px) {
+    .business-page .business-hero {
+        min-height: 460px !important;
+        margin-left: calc(50% - 50vw) !important;
+        padding: 64px 22px !important;
+        background-position: center !important;
+    }
+}
