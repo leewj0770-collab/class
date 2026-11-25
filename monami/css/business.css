@@ -137,7 +137,6 @@
 .inquiry-steps h3 { margin: 18px 0 10px; font-size: 20px; }
 .inquiry-steps p { margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.8; }
 .business-contact-note { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 48px; padding: 36px clamp(24px, 4vw, 52px); background: var(--background-default); border-radius: 12px; }
-.business-contact-note .business-eyebrow { margin: 0 0 10px; color: var(--action-primary); font-size: 12px; font-weight: 700; letter-spacing: .14em; }
 .business-contact-note h3 { margin: 0; font-size: 24px; }
 .business-contact-note p:last-child { margin: 10px 0 0; color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
 .business-contact-link { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--text-primary); color: var(--text-primary); font-size: 14px; font-weight: 600; text-decoration: none; }
