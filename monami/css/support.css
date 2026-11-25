@@ -247,3 +247,19 @@
         background-position: 58% center !important;
     }
 }
+
+
+/* HERO와 고객지원 탭 사이 여백 */
+.support-page .support-tabs {
+    margin-top: clamp(56px, 7vw, 88px);
+}
+@media (max-width: 760px) {
+    .support-page .support-tabs {
+        margin-top: 52px;
+    }
+}
+@media (max-width: 560px) {
+    .support-page .support-tabs {
+        margin-top: 40px;
+    }
+}
