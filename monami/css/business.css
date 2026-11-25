@@ -186,3 +186,44 @@
     .business-tabs,
     .business-panel { width: calc(100% - 40px); }
 }
+
+
+/* 서브페이지 첫 화면: 전체 배경 이미지와 중앙 제목 */
+.business-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+    min-height: clamp(420px, 56vw, 680px);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 80px 24px;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+        url("../img/story-brand-product.jpg") center / cover no-repeat;
+}
+.business-hero-copy {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 1000px);
+    text-align: center;
+}
+.business-hero h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(36px, 5.2vw, 72px);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -.055em;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, .2);
+}
+@media (max-width: 760px) {
+    .business-hero {
+        min-height: 420px;
+        padding: 72px 24px;
+        background-position: center;
+    }
+}
