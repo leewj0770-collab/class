@@ -118,8 +118,8 @@
 .business-info-strip { margin-top: 64px; padding: 30px 0; border-top: 1px solid var(--border-default); border-bottom: 1px solid var(--border-default); }
 .business-info-strip h3 { margin: 0 0 20px; font-size: 20px; }
 .business-info-strip ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin: 0; padding: 0; list-style: none; }
-.business-info-strip li { position: relative; padding-left: 16px; color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
-.business-info-strip li::before { position: absolute; top: .7em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--action-primary); content: ""; }
+.business-info-strip li { color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
+.business-info-strip li::before { display: none; }
 .custom-layout { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); align-items: center; gap: clamp(32px, 7vw, 100px); }
 .custom-visual { display: flex; align-items: center; justify-content: center; min-height: 420px; padding: 32px; overflow: hidden; background: var(--background-default); border-radius: 12px; }
 .custom-visual img { display: block; width: min(100%, 420px); max-height: 380px; object-fit: contain; }
