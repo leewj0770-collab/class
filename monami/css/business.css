@@ -205,7 +205,14 @@
     font: inherit;
     font-size: 13px;
 }
-.business-file-field p { margin: 0; color: var(--text-secondary); font-size: 12px; }
+.business-file-field p {
+    margin: 0;
+    padding-left: 26px;
+    box-sizing: border-box;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.6;
+}
 .business-privacy {
     display: flex;
     align-items: flex-start;
