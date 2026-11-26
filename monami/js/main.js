@@ -42,9 +42,12 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
 } 
 
 
-// 메인 대표 제품 소개: 카테고리를 클릭하면 해당 이미지 3장으로 전환합니다.
+// 메인 대표 제품 소개: 카테고리를 클릭하면 해당 콘텐츠로 전환합니다.
 const productCategories = document.querySelectorAll("[data-product-category]");
-const productCategoryPanels = document.querySelectorAll(".product-section .product-content[id^='product-']");
+const productCategoryPanels = document.querySelectorAll(
+    ".product-section .product-content[id='premium-pens'], " +
+    ".product-section .product-content[id^='product-']"
+);
 
 const activateMainProductCategory = (category) => {
     const targetId = category.dataset.productCategory;
