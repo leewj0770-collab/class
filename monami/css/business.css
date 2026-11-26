@@ -33,7 +33,7 @@
     overflow: hidden;
     background:
         linear-gradient(rgba(0, 0, 0, .34), rgba(0, 0, 0, .34)),
-        url("../img/quicklink-corporate.jpg") center / cover no-repeat;
+        url("../business_visual.png") center / cover no-repeat;
 }
 .business-page .business-hero-copy {
     position: relative;
