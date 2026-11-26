@@ -116,39 +116,64 @@
                 </div>
             </section>
 
-            <!-- 대표 제품 소개: 카테고리별 이미지 3장 -->
+            <!-- 대표 제품 소개: 기존 프리미엄 펜을 유지하고 3개 카테고리를 추가 -->
             <section class="product-section" aria-labelledby="product-title">
                 <aside class="product-sidebar">
                     <h2>대표 제품 소개</h2>
                     <p class="product-sidebar-desc">언제 어디서나 생활 속에 함께하는 모나미</p>
                     <nav class="product-categories" aria-label="제품 카테고리">
-                        <a class="product-category is-active" href="#product-pen" data-product-category="product-pen" aria-current="true"><span>펜·만년필</span></a>
+                        <a class="product-category is-active" href="#premium-pens" data-product-category="premium-pens" aria-current="true"><span>프리미엄 펜</span></a>
+                        <a class="product-category" href="#product-pen" data-product-category="product-pen"><span>펜·만년필</span></a>
                         <a class="product-category" href="#product-marker" data-product-category="product-marker"><span>마카·컬러링</span></a>
                         <a class="product-category" href="#product-notebook" data-product-category="product-notebook"><span>노트·사무용품</span></a>
                         <a class="story-more product-menu-more" href="product.html" aria-label="전체 제품 보기"><span>전체메뉴</span><span class="story-more-icon" aria-hidden="true">➜</span></a>
                     </nav>
                 </aside>
 
-                <div class="product-content" id="product-pen" role="region" aria-labelledby="product-title-pen">
+                <div class="product-content" id="premium-pens" role="region" aria-labelledby="product-title">
+                    <h2 id="product-title">프리미엄 펜</h2>
+                    <div class="product-grid">
+                        <article class="product-card">
+                            <a class="product-image-link" href="#premium-pens" aria-label="프러스펜 3000 프라임 이미지">
+                                <img src="img/monami_pen1.png" alt="프러스펜 3000 프라임">
+                            </a>
+                            <h3>프러스펜 3000 프라임</h3>
+                        </article>
+                        <article class="product-card">
+                            <a class="product-image-link" href="#premium-pens" aria-label="153 아이스크림 라벤더 이미지">
+                                <img src="img/monami_pen2.png" alt="153 아이스크림 라벤더">
+                            </a>
+                            <h3>153 아이스크림 라벤더</h3>
+                        </article>
+                        <article class="product-card">
+                            <a class="product-image-link" href="#premium-pens" aria-label="153 블랙 앤 화이트 이미지">
+                                <img src="img/monami_pen3.png" alt="153 블랙 앤 화이트">
+                            </a>
+                            <h3>153 블랙 앤 화이트</h3>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="product-content" id="product-pen" role="region" aria-labelledby="product-title-pen" hidden>
                     <h2 id="product-title-pen">펜·만년필</h2>
                     <div class="product-grid">
                         <article class="product-card">
-                            <a class="product-image-link" href="product.html#representative" aria-label="펜·만년필 제품 이미지 1">
-                                <img src="img/pen_01.png" alt="펜·만년필 제품 이미지 1">
+                            <a class="product-image-link" href="product.html#representative" aria-label="펜·만년필 제품 이미지 01">
+                                <img src="img/pen_01.png" alt="펜·만년필 제품 이미지 01">
                             </a>
-                            <h3>펜·만년필 제품 01</h3>
+                            <h3>펜·만년필 01</h3>
                         </article>
                         <article class="product-card">
-                            <a class="product-image-link" href="product.html#representative" aria-label="펜·만년필 제품 이미지 2">
-                                <img src="img/pen_02.png" alt="펜·만년필 제품 이미지 2">
+                            <a class="product-image-link" href="product.html#representative" aria-label="펜·만년필 제품 이미지 02">
+                                <img src="img/pen_02.png" alt="펜·만년필 제품 이미지 02">
                             </a>
-                            <h3>펜·만년필 제품 02</h3>
+                            <h3>펜·만년필 02</h3>
                         </article>
                         <article class="product-card">
-                            <a class="product-image-link" href="product.html#representative" aria-label="펜·만년필 제품 이미지 3">
-                                <img src="img/pen_03.png" alt="펜·만년필 제품 이미지 3">
+                            <a class="product-image-link" href="product.html#representative" aria-label="펜·만년필 제품 이미지 03">
+                                <img src="img/pen_03.png" alt="펜·만년필 제품 이미지 03">
                             </a>
-                            <h3>펜·만년필 제품 03</h3>
+                            <h3>펜·만년필 03</h3>
                         </article>
                     </div>
                 </div>
@@ -157,22 +182,22 @@
                     <h2 id="product-title-marker">마카·컬러링</h2>
                     <div class="product-grid">
                         <article class="product-card">
-                            <a class="product-image-link" href="product.html#representative" aria-label="마카·컬러링 제품 이미지 1">
-                                <img src="img/marker_coloring_01.png" alt="마카·컬러링 제품 이미지 1">
+                            <a class="product-image-link" href="product.html#representative" aria-label="마카·컬러링 제품 이미지 01">
+                                <img src="img/marker_coloring_01.png" alt="마카·컬러링 제품 이미지 01">
                             </a>
-                            <h3>마카·컬러링 제품 01</h3>
+                            <h3>마카·컬러링 01</h3>
                         </article>
                         <article class="product-card">
-                            <a class="product-image-link" href="product.html#representative" aria-label="마카·컬러링 제품 이미지 2">
-                                <img src="img/marker_coloring_02.png" alt="마카·컬러링 제품 이미지 2">
+                            <a class="product-image-link" href="product.html#representative" aria-label="마카·컬러링 제품 이미지 02">
+                                <img src="img/marker_coloring_02.png" alt="마카·컬러링 제품 이미지 02">
                             </a>
-                            <h3>마카·컬러링 제품 02</h3>
+                            <h3>마카·컬러링 02</h3>
                         </article>
                         <article class="product-card">
-                            <a class="product-image-link" href="product.html#representative" aria-label="마카·컬러링 제품 이미지 3">
-                                <img src="img/marker_coloring_03.png" alt="마카·컬러링 제품 이미지 3">
+                            <a class="product-image-link" href="product.html#representative" aria-label="마카·컬러링 제품 이미지 03">
+                                <img src="img/marker_coloring_03.png" alt="마카·컬러링 제품 이미지 03">
                             </a>
-                            <h3>마카·컬러링 제품 03</h3>
+                            <h3>마카·컬러링 03</h3>
                         </article>
                     </div>
                 </div>
@@ -181,22 +206,22 @@
                     <h2 id="product-title-notebook">노트·사무용품</h2>
                     <div class="product-grid">
                         <article class="product-card">
-                            <a class="product-image-link" href="product.html#representative" aria-label="노트·사무용품 제품 이미지 1">
-                                <img src="img/notebook_office_01.png" alt="노트·사무용품 제품 이미지 1">
+                            <a class="product-image-link" href="product.html#representative" aria-label="노트·사무용품 제품 이미지 01">
+                                <img src="img/notebook_office_01.png" alt="노트·사무용품 제품 이미지 01">
                             </a>
-                            <h3>노트·사무용품 제품 01</h3>
+                            <h3>노트·사무용품 01</h3>
                         </article>
                         <article class="product-card">
-                            <a class="product-image-link" href="product.html#representative" aria-label="노트·사무용품 제품 이미지 2">
-                                <img src="img/notebook_office_02.png" alt="노트·사무용품 제품 이미지 2">
+                            <a class="product-image-link" href="product.html#representative" aria-label="노트·사무용품 제품 이미지 02">
+                                <img src="img/notebook_office_02.png" alt="노트·사무용품 제품 이미지 02">
                             </a>
-                            <h3>노트·사무용품 제품 02</h3>
+                            <h3>노트·사무용품 02</h3>
                         </article>
                         <article class="product-card">
-                            <a class="product-image-link" href="product.html#representative" aria-label="노트·사무용품 제품 이미지 3">
-                                <img src="img/notebook_office_03.png" alt="노트·사무용품 제품 이미지 3">
+                            <a class="product-image-link" href="product.html#representative" aria-label="노트·사무용품 제품 이미지 03">
+                                <img src="img/notebook_office_03.png" alt="노트·사무용품 제품 이미지 03">
                             </a>
-                            <h3>노트·사무용품 제품 03</h3>
+                            <h3>노트·사무용품 03</h3>
                         </article>
                     </div>
                 </div>
