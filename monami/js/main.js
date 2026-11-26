@@ -42,16 +42,46 @@ if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-mot
 } 
 
 
-// 제품 카테고리: 클릭한 항목의 강조 상태를 유지합니다.
-// 브랜드 스토어로 이동하는 전체 메뉴는 외부 링크이므로 선택 상태에서 제외합니다.
-const productCategories = document.querySelectorAll(".product-category:not(.product-category-external)");
+// 메인 대표 제품 소개: 카테고리를 클릭하면 해당 이미지 3장으로 전환합니다.
+const productCategories = document.querySelectorAll("[data-product-category]");
+const productCategoryPanels = document.querySelectorAll(".product-section .product-content[id^='product-']");
+
+const activateMainProductCategory = (category) => {
+    const targetId = category.dataset.productCategory;
+
+    productCategories.forEach((item) => {
+        const selected = item === category;
+        item.classList.toggle("is-active", selected);
+        if (selected) {
+            item.setAttribute("aria-current", "true");
+        } else {
+            item.removeAttribute("aria-current");
+        }
+    });
+
+    productCategoryPanels.forEach((panel) => {
+        panel.hidden = panel.id !== targetId;
+    });
+};
 
 productCategories.forEach((category) => {
-    category.addEventListener("click", () => {
-        productCategories.forEach((item) => item.classList.remove("is-active"));
-        category.classList.add("is-active");
+    category.addEventListener("click", (event) => {
+        event.preventDefault();
+        activateMainProductCategory(category);
+        history.replaceState(null, "", category.getAttribute("href"));
     });
 });
+
+// 주소에 카테고리 해시가 있으면 해당 카테고리를 처음부터 표시합니다.
+const activateMainProductCategoryFromHash = () => {
+    const targetId = window.location.hash.slice(1);
+    const targetCategory = Array.from(productCategories).find(
+        (category) => category.dataset.productCategory === targetId
+    );
+    if (targetCategory) activateMainProductCategory(targetCategory);
+};
+activateMainProductCategoryFromHash();
+window.addEventListener("hashchange", activateMainProductCategoryFromHash);
 
 // 전체 메뉴의 외부 주소가 정해지기 전에는 임시 링크가 페이지를 위로 이동시키지 않도록 합니다.
 const externalProductLink = document.querySelector(".product-category-external");
