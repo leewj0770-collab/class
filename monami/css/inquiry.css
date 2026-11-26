@@ -160,120 +160,132 @@
 }
 
 
-/* 브랜드 스토어 CTA: 사진 위에 원형 블랙 패널 배치 */
-.brand-store-visual {
-    position: relative;
+/* 브랜드 스토어 CTA: 화면 오른쪽 위에 고정 */
+.brand-store-floating {
+    position: fixed;
+    top: 96px;
+    right: 24px;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 560px;
-    overflow: hidden;
-    border-radius: 20px;
-    background: #eee;
-}
-.brand-store-visual > img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-.brand-store-card:hover .brand-store-visual > img,
-.brand-store-card:focus-within .brand-store-visual > img {
-    transform: scale(1.05);
-}
-.brand-store-circle {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: clamp(190px, 18vw, 260px);
+    width: 230px;
     aspect-ratio: 1;
-    padding: 28px;
-    box-sizing: border-box;
     border-radius: 50%;
     background: #050505;
     color: #fff;
-    text-align: center;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .22);
 }
-.brand-store-main {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+
+.brand-store-floating .brand-store-circle {
+    position: static;
+    width: 100%;
+    height: 100%;
+    padding: 34px;
+    background: transparent;
+}
+
+.brand-store-close {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    z-index: 2;
+    padding: 5px 8px;
+    border: 1px solid rgba(255,255,255,.55);
+    border-radius: 999px;
+    background: transparent;
     color: #fff;
-    text-decoration: none;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    transition: background-color .2s ease, color .2s ease;
 }
-.brand-store-logo {
-    margin-bottom: 8px;
-    font-size: 19px;
-    font-weight: 700;
-    letter-spacing: -0.06em;
+
+.brand-store-close:hover,
+.brand-store-close:focus-visible {
+    background: #fff;
+    color: #050505;
 }
-.brand-store-logo span {
-    font-style: italic;
-    font-weight: 400;
+
+.brand-store-floating .brand-store-main {
+    margin-top: 8px;
 }
-.brand-store-main strong {
-    font-size: clamp(19px, 1.7vw, 25px);
-    font-weight: 600;
-    letter-spacing: -0.05em;
+
+.brand-store-floating .brand-store-logo {
+    font-size: 18px;
 }
-.brand-store-go {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-    padding-bottom: 9px;
-    border-bottom: 1px solid rgba(255,255,255,.55);
-    font-size: 15px;
-    font-weight: 700;
+
+.brand-store-floating .brand-store-main strong {
+    font-size: 22px;
 }
-.brand-store-go > span {
-    font-size: 25px;
-    font-weight: 300;
-    line-height: 1;
-    transition: transform .2s ease;
+
+.brand-store-floating .brand-store-inquiry {
+    font-size: 13px;
 }
-.brand-store-main:hover .brand-store-go > span,
-.brand-store-main:focus-visible .brand-store-go > span {
-    transform: translateX(4px);
-}
-.brand-store-inquiry {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 9px;
-    color: rgba(255,255,255,.9);
-    font-size: 14px;
-    text-decoration: none;
-}
-.brand-store-inquiry > span:first-child { font-size: 20px; }
-.brand-store-inquiry:hover,
-.brand-store-inquiry:focus-visible {
-    color: #fff;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-}
-.brand-store-main:focus-visible,
-.brand-store-inquiry:focus-visible {
+
+.brand-store-floating .brand-store-main:focus-visible,
+.brand-store-floating .brand-store-inquiry:focus-visible,
+.brand-store-close:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 4px;
-    border-radius: 3px;
 }
+
+.brand-store-floating.is-dismissed {
+    display: none;
+}
+
 @media (max-width: 760px) {
-    .brand-store-visual {
-        height: clamp(260px, 48vw, 360px);
-        border-radius: 16px;
+    .brand-store-floating {
+        top: 78px;
+        right: 16px;
+        width: 190px;
     }
-    .brand-store-circle { width: clamp(190px, 30vw, 230px); }
+
+    .brand-store-floating .brand-store-circle {
+        padding: 28px;
+    }
+
+    .brand-store-floating .brand-store-main strong {
+        font-size: 19px;
+    }
 }
+
 @media (max-width: 520px) {
-    .brand-store-visual { height: 260px; }
-    .brand-store-circle { width: 210px; }
+    .brand-store-floating {
+        top: 72px;
+        right: 12px;
+        width: 172px;
+    }
+
+    .brand-store-floating .brand-store-circle {
+        padding: 25px;
+    }
+
+    .brand-store-floating .brand-store-logo {
+        font-size: 16px;
+    }
+
+    .brand-store-floating .brand-store-main strong {
+        font-size: 17px;
+    }
+
+    .brand-store-floating .brand-store-go {
+        font-size: 13px;
+    }
+
+    .brand-store-floating .brand-store-inquiry {
+        font-size: 11px;
+    }
+
+    .brand-store-close {
+        top: 9px;
+        right: 13px;
+        font-size: 10px;
+    }
 }
+
 @media (prefers-reduced-motion: reduce) {
-    .brand-store-visual > img,
-    .brand-store-go > span { transition: none; }
+    .brand-store-close {
+        transition: none;
+    }
 }
