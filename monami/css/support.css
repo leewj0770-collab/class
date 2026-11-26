@@ -216,7 +216,7 @@
     border-radius: 0 !important;
     background:
         linear-gradient(rgba(0, 0, 0, .30), rgba(0, 0, 0, .30)),
-        url("../img/hero-writing.jpg") center 48% / cover no-repeat !important;
+        url("../support_visual.png") center 48% / cover no-repeat !important;
 }
 .support-page .support-hero > div:first-child {
     width: min(100%, 1100px);
