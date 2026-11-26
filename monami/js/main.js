@@ -365,3 +365,33 @@ if (brandStoreFloating && brandStoreClose) {
         brandStoreFloating.classList.add("is-dismissed");
     });
 }
+
+
+// 메인 모나미 뉴스: 기사에 마우스를 올리거나 키보드 포커스를 두면 해당 이미지를 보여줍니다.
+const mainNewsLinks = document.querySelectorAll(".news-section .news-item > a[data-news-image]");
+const mainNewsPreview = document.querySelector("[data-news-preview]");
+
+if (mainNewsLinks.length && mainNewsPreview) {
+    const activateNewsPreview = (link) => {
+        const imagePath = link.dataset.newsImage;
+        if (!imagePath) return;
+
+        mainNewsLinks.forEach((item) => {
+            const selected = item === link;
+            item.classList.toggle("is-preview-active", selected);
+            item.setAttribute("aria-current", selected ? "true" : "false");
+        });
+
+        if (mainNewsPreview.getAttribute("src") !== imagePath) {
+            mainNewsPreview.src = imagePath;
+            mainNewsPreview.alt = link.querySelector(".news-item-title")?.textContent.trim() + " 관련 이미지";
+        }
+    };
+
+    mainNewsLinks.forEach((link) => {
+        link.addEventListener("mouseenter", () => activateNewsPreview(link));
+        link.addEventListener("focus", () => activateNewsPreview(link));
+    });
+
+    activateNewsPreview(mainNewsLinks[0]);
+}
