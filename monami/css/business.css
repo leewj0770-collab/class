@@ -205,6 +205,9 @@
     font: inherit;
     font-size: 13px;
 }
+.business-file-field {
+    margin-bottom: 10px;
+}
 .business-file-field p {
     margin: 0;
     padding-left: 26px;
@@ -217,7 +220,7 @@
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    margin: 8px 0 28px;
+    margin: 0 0 28px;
     color: var(--text-secondary);
     font-size: 13px;
     line-height: 1.6;
