@@ -88,6 +88,7 @@
     background: var(--background-default);
 }
 .business-form-visual > img {
+    border-radius: 16px;
     display: block;
     width: 100%;
     height: 390px;
