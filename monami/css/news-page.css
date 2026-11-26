@@ -208,7 +208,7 @@
     overflow: hidden;
     background:
         linear-gradient(rgba(0, 0, 0, .38), rgba(0, 0, 0, .38)),
-        url("../img/news/page_visual5.jpg") center / cover no-repeat;
+        url("../news_visual.png") center / cover no-repeat;
 }
 .news-page-hero-copy {
     position: relative;
