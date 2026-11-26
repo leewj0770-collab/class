@@ -439,3 +439,57 @@
         grid-row: 2 !important;
     }
 }
+
+
+/* 메인 뉴스 자세히보기 버튼: 모나미 이야기의 story-more 디자인과 동일하게 적용 */
+#monami-news .news-header .news-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-width: 108px;
+    min-height: 34px;
+    padding: 14px 26px;
+    border: 1px solid #bdbdbd;
+    border-radius: 999px;
+    color: #111;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+#monami-news .news-header .news-more:hover,
+#monami-news .news-header .news-more:focus-visible {
+    border-color: #111;
+    background: #111;
+    color: #fff;
+}
+#monami-news .news-header .news-more .story-more-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+}
+#monami-news .news-header .news-more:hover .story-more-icon,
+#monami-news .news-header .news-more:focus-visible .story-more-icon {
+    background: #fff;
+    color: #111;
+}
+#monami-news .news-item > a {
+    justify-content: flex-start;
+}
+#monami-news .news-item > a .news-arrow {
+    display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+    #monami-news .news-header .news-more {
+        transition: none;
+    }
+}
