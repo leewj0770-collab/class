@@ -321,3 +321,14 @@ if (productColorOptions.length && productMainImage) {
     });
 }
 
+
+
+// 브랜드 스토어 고정 CTA: 취소 버튼을 눌렀을 때만 닫힙니다.
+const brandStoreFloating = document.querySelector(".brand-store-floating");
+const brandStoreClose = document.querySelector(".brand-store-close");
+
+if (brandStoreFloating && brandStoreClose) {
+    brandStoreClose.addEventListener("click", () => {
+        brandStoreFloating.classList.add("is-dismissed");
+    });
+}
