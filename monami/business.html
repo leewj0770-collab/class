@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../font/CSS/pretendardvariable.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/business.css?v=contact-layout-3">
+    <link rel="stylesheet" href="css/business-sections.css">
     <link rel="stylesheet" href="css/footer.css">
     <script src="js/main.js" defer></script>
     <script src="js/business.js" defer></script>
@@ -24,104 +25,23 @@
                     <li class="gnb-item"><a href="product.html">제품소개</a><ul class="sub-menu"><li><a href="product.html#representative">대표상품</a></li><li><a href="product.html#new-products">신상품</a></li><li><a href="product.html#popular-products">인기상품</a></li></ul></li>
                     <li class="gnb-item"><a href="news.html">모나미 뉴스</a><ul class="sub-menu"><li><a href="news.html#press-release">보도자료</a></li><li><a href="news.html#video-library">동영상 자료</a></li></ul></li>
                     <li class="gnb-item"><a href="support.html">고객지원</a><ul class="sub-menu"><li><a href="support.html#faq">자주 묻는 질문</a></li><li><a href="support.html#contact">문의하기</a></li></ul></li>
-                    <li class="gnb-item"><a href="business.html" aria-current="page">기업·단체 구매</a><ul class="sub-menu"><li><a href="business.html#bulk-purchase">기업·단체 구매</a></li><li><a href="business.html#custom-development">맞춤 제품 개발</a></li><li><a href="business.html#business-inquiry">기업 문의</a></li></ul></li>
+                    <li class="gnb-item"><a href="business.html" aria-current="page">기업·단체 구매</a><ul class="sub-menu"><li><a href="business.html">기업·단체 구매</a></li><li><a href="custom-development.html">맞춤 제품 개발</a></li><li><a href="business-inquiry.html">기업 문의</a></li></ul></li>
                 </ul>
             </nav>
             <button class="menu-toggle" type="button" aria-controls="gnb" aria-expanded="false" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
         </div>
     </header>
 
-    <main class="business-page">
-        <nav class="business-breadcrumb" aria-label="현재 위치">
-            <a href="index.html">HOME</a><span aria-hidden="true">/</span><span aria-current="page">기업·단체 구매</span>
-        </nav>
-
-        <section class="business-contact-intro" id="bulk-purchase" aria-labelledby="business-title">
-            <h2 id="business-title">모나미와 함께할<br>프로젝트를 알려주세요.</h2>
-            <p class="business-intro-text">기업·단체 구매부터 맞춤 제품 제작까지,<br class="desktop-only"> 문의 내용을 남겨주시면 확인할 수 있도록 안내해 드리겠습니다.</p>
-        </section>
-
-        <section class="business-contact-info" aria-label="기업 문의 안내">
-            <div><strong>기업·단체 구매 및 맞춤 제작</strong></div>
-            <div><a href="tel:0312160153">031-216-0153</a></div>
-            <div><a href="tel:0800220153">080-022-0153</a></div>
-        </section>
-
-        <section class="business-form-section" aria-label="기업 문의 양식">
-            <div class="business-form-visual">
-                <img src="img/monami_pen1.png" alt="모나미 필기구 제품">
-                <div class="business-form-visual-copy">
-                    <h3>당신의 아이디어에<br>모나미를 더해보세요.</h3>
-                    <span>필요한 제품과 수량, 제작 방향을 자세히 남겨주시면 상담에 도움이 됩니다.</span>
-                </div>
-            </div>
-
-            <form class="business-inquiry-form" id="business-inquiry-form">
-                <div class="business-form-heading" id="business-inquiry">
-                    <h3>문의 정보 입력</h3>
-                    <p><span>*</span> 표시는 필수 입력 항목입니다.</p>
-                </div>
-
-                <div class="business-form-grid">
-                    <div class="business-field">
-                        <label for="business-company">업체명 / 부서</label>
-                        <input id="business-company" name="company" type="text" placeholder="업체명 또는 부서를 입력해 주세요.">
-                    </div>
-                    <div class="business-field">
-                        <label for="business-name">담당자명 <span>*</span></label>
-                        <input id="business-name" name="name" type="text" placeholder="담당자 성함을 입력해 주세요." required>
-                    </div>
-                    <div class="business-field">
-                        <label for="business-email">이메일 <span>*</span></label>
-                        <input id="business-email" name="email" type="email" placeholder="회신받을 이메일을 입력해 주세요." required>
-                    </div>
-                    <div class="business-field">
-                        <label for="business-phone">연락처</label>
-                        <input id="business-phone" name="phone" type="tel" placeholder="연락 가능한 전화번호를 입력해 주세요.">
-                    </div>
-                </div>
-
-                <fieldset class="business-type-field" id="custom-development">
-                    <legend>문의 유형 <span>*</span></legend>
-                    <div class="business-type-options">
-                        <label><input type="radio" name="inquiryType" value="기업·단체 구매" required><span>기업·단체 구매</span></label>
-                        <label><input type="radio" name="inquiryType" value="맞춤 제품 개발"><span>맞춤 제품 개발</span></label>
-                        <label><input type="radio" name="inquiryType" value="기타 기업 문의"><span>기타 기업 문의</span></label>
-                    </div>
-                </fieldset>
-
-                <div class="business-form-grid">
-                    <div class="business-field">
-                        <label for="business-product">관심 제품 / 제품군</label>
-                        <input id="business-product" name="product" type="text" placeholder="예: 볼펜, 마카, 노트 등">
-                    </div>
-                    <div class="business-field">
-                        <label for="business-quantity">예상 수량</label>
-                        <input id="business-quantity" name="quantity" type="text" placeholder="예: 500개">
-                    </div>
-                </div>
-
-                <div class="business-field">
-                    <label for="business-message">문의 내용 <span>*</span></label>
-                    <textarea id="business-message" name="message" rows="6" placeholder="필요한 제품, 사용 목적, 희망 일정 등 문의 내용을 작성해 주세요." required></textarea>
-                </div>
-
-                <div class="business-field business-file-field">
-                    <label for="business-attachment">첨부파일</label>
-                    <input id="business-attachment" name="attachment" type="file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.zip">
-                    <p>제품 참고 이미지나 요청 자료가 있다면 첨부해 주세요. (선택 항목)</p>
-                </div>
-
-                <label class="business-privacy">
-                    <input type="checkbox" name="privacy" required>
-                    <span>문의 접수 및 답변을 위한 개인정보 수집·이용에 동의합니다. <em>(필수)</em></span>
-                </label>
-
-                <button class="business-submit-button" type="submit">문의하기 <span aria-hidden="true">↗</span></button>
-                <p class="business-form-notice">현재는 포트폴리오용 화면으로, 문의 내용을 실제로 전송하는 기능은 연결되어 있지 않습니다.</p>
-            </form>
-        </section>
-    </main>
+    <main class="business-page business-section-page">
+<nav class="business-breadcrumb" aria-label="현재 위치"><a href="index.html">HOME</a><span>/</span><span aria-current="page">기업·단체 구매</span></nav>
+<section class="business-section-hero"><div class="business-section-hero-copy"><p class="business-eyebrow">BUSINESS PARTNERSHIP</p><h2>함께하는 순간을<br>모나미로 채우다.</h2><p>기업과 단체의 목적에 맞는 모나미 제품을 만나보세요.<br>행사, 교육, 사내 비품 등 다양한 상황에 어울리는 제품을 제안합니다.</p></div><div class="business-section-hero-image"><img src="img/business_visual.png" alt="모나미 기업 및 단체 구매 관련 이미지"></div></section>
+<section class="business-section-content"><div class="business-section-heading"><p class="business-eyebrow">GROUP PURCHASE</p><h2>필요한 수량과 목적에 맞춰<br>간편하게 준비하세요.</h2><p>기업 행사와 교육 프로그램, 사무 환경에 필요한 제품을 한 번에 준비할 수 있습니다.</p></div><div class="business-feature-grid">
+<article class="business-feature-card"><span>01</span><h3>기업 행사 및 프로모션</h3><p>브랜드 행사와 고객 증정품, 캠페인 운영에 활용할 제품을 준비해 보세요.</p></article>
+<article class="business-feature-card"><span>02</span><h3>교육 및 기관 납품</h3><p>학교와 교육 기관, 다양한 단체 활동에 필요한 문구 제품을 제안합니다.</p></article>
+<article class="business-feature-card"><span>03</span><h3>사내 비품 및 정기 구매</h3><p>업무 환경에 필요한 필기구와 사무용품을 목적과 수량에 맞춰 문의할 수 있습니다.</p></article></div></section>
+<section class="business-process-section"><div class="business-section-heading"><p class="business-eyebrow">HOW TO ORDER</p><h2>구매 상담은 이렇게 진행됩니다.</h2></div><ol class="business-process-list">
+<li><span>STEP 01</span><h3>문의 내용 전달</h3><p>필요한 제품과 예상 수량, 사용 목적을 정리해 주세요.</p></li><li><span>STEP 02</span><h3>상담 및 확인</h3><p>문의 내용을 바탕으로 담당자와 세부 사항을 확인합니다.</p></li><li><span>STEP 03</span><h3>구매 진행</h3><p>제품과 수량, 일정 등 조건을 협의한 뒤 구매를 진행합니다.</p></li></ol></section>
+<section class="business-section-cta"><div><p class="business-eyebrow">LET'S TALK</p><h2>단체 구매가 필요하신가요?</h2><p>제품과 수량을 알려주시면 문의 내용을 확인할 수 있도록 안내해 드립니다.</p></div><a href="business-inquiry.html" class="business-section-button">기업 문의하기 <span>↗</span></a></section></main>
 
     <footer id="footer">
         <div class="footer-inner">
