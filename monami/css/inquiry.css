@@ -396,7 +396,7 @@
 }
 .brand-store-floating .brand-store-logo span {
     margin-left: 3px;
-    color: #ef5555;
+    color: #fff;
     font-weight: 800;
     letter-spacing: .04em;
 }
@@ -426,7 +426,8 @@
     height: 23px;
     margin-left: 14px;
     border-radius: 50%;
-    background: #d93636;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.8);
     color: #fff;
     font-size: 18px;
     line-height: 1;
@@ -434,7 +435,7 @@
 }
 .brand-store-floating .brand-store-main:hover .brand-store-go > span {
     transform: translateX(3px);
-    background: #ef4545;
+    background: rgba(255,255,255,.14);
 }
 .brand-store-floating .brand-store-main:focus-visible {
     border-radius: 8px;
