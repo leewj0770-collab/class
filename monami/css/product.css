@@ -234,3 +234,10 @@
         transition: none;
     }
 }
+
+
+/* 전체메뉴 버튼: 모나미 이야기의 자세히보기 버튼과 동일한 디자인 */
+.product-menu-more {
+    align-self: flex-start;
+    margin-top: 20px;
+}
