@@ -163,7 +163,9 @@
 /* 브랜드 스토어 CTA: 화면 오른쪽 위에 고정 */
 .brand-store-floating {
     position: fixed;
-    top: 96px;\n    visibility: visible;\n    opacity: 1;
+    top: 96px;
+    visibility: visible;
+    opacity: 1;
     right: 24px;
     z-index: 99999;
     display: flex;
