@@ -255,3 +255,15 @@
         margin-top: 40px;
     }
 }
+
+/* FAQ 질문에 마우스를 올렸을 때 배경색을 은은하게 변경 */
+.faq-item summary {
+    border-radius: 6px;
+    transition: background-color .2s ease;
+}
+.faq-item summary:hover {
+    background-color: rgba(217, 54, 54, .06);
+}
+@media (prefers-reduced-motion: reduce) {
+    .faq-item summary { transition: none; }
+}
