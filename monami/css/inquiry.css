@@ -158,3 +158,122 @@
         transition: none;
     }
 }
+
+
+/* 브랜드 스토어 CTA: 사진 위에 원형 블랙 패널 배치 */
+.brand-store-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #eee;
+}
+.brand-store-visual > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.brand-store-card:hover .brand-store-visual > img,
+.brand-store-card:focus-within .brand-store-visual > img {
+    transform: scale(1.05);
+}
+.brand-store-circle {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: clamp(190px, 18vw, 260px);
+    aspect-ratio: 1;
+    padding: 28px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background: #050505;
+    color: #fff;
+    text-align: center;
+}
+.brand-store-main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    color: #fff;
+    text-decoration: none;
+}
+.brand-store-logo {
+    margin-bottom: 8px;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+}
+.brand-store-logo span {
+    font-style: italic;
+    font-weight: 400;
+}
+.brand-store-main strong {
+    font-size: clamp(19px, 1.7vw, 25px);
+    font-weight: 600;
+    letter-spacing: -0.05em;
+}
+.brand-store-go {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid rgba(255,255,255,.55);
+    font-size: 15px;
+    font-weight: 700;
+}
+.brand-store-go > span {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1;
+    transition: transform .2s ease;
+}
+.brand-store-main:hover .brand-store-go > span,
+.brand-store-main:focus-visible .brand-store-go > span {
+    transform: translateX(4px);
+}
+.brand-store-inquiry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 9px;
+    color: rgba(255,255,255,.9);
+    font-size: 14px;
+    text-decoration: none;
+}
+.brand-store-inquiry > span:first-child { font-size: 20px; }
+.brand-store-inquiry:hover,
+.brand-store-inquiry:focus-visible {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+.brand-store-main:focus-visible,
+.brand-store-inquiry:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+@media (max-width: 760px) {
+    .brand-store-visual {
+        height: clamp(260px, 48vw, 360px);
+        border-radius: 16px;
+    }
+    .brand-store-circle { width: clamp(190px, 30vw, 230px); }
+}
+@media (max-width: 520px) {
+    .brand-store-visual { height: 260px; }
+    .brand-store-circle { width: 210px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .brand-store-visual > img,
+    .brand-store-go > span { transition: none; }
+}
