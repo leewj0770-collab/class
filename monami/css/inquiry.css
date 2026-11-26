@@ -347,3 +347,112 @@
     .brand-store-floating .brand-store-circle { padding: 25px; }
     .brand-store-close { top: 13px; right: 13px; }
 }
+
+
+/* 브랜드 스토어 CTA 디자인 디테일 보강 */
+.brand-store-floating {
+    background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,.12), transparent 38%),
+        linear-gradient(145deg, #242424 0%, #080808 62%, #000 100%);
+    border: 1px solid rgba(255,255,255,.22);
+    box-shadow:
+        0 14px 34px rgba(0,0,0,.24),
+        inset 0 1px 0 rgba(255,255,255,.14);
+    transition: transform .28s ease, box-shadow .28s ease;
+}
+.brand-store-floating::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 50%;
+    pointer-events: none;
+}
+.brand-store-floating:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 38px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.18);
+}
+.brand-store-floating .brand-store-circle {
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 38px;
+}
+.brand-store-floating .brand-store-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+    color: #fff;
+}
+.brand-store-floating .brand-store-logo {
+    margin-bottom: 12px;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.78);
+}
+.brand-store-floating .brand-store-logo span {
+    margin-left: 3px;
+    color: #ef5555;
+    font-weight: 800;
+    letter-spacing: .04em;
+}
+.brand-store-floating .brand-store-main strong {
+    font-size: 23px;
+    font-weight: 750;
+    letter-spacing: -.055em;
+    line-height: 1.25;
+}
+.brand-store-floating .brand-store-go {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding: 9px 2px 0;
+    border-top: 1px solid rgba(255,255,255,.32);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    color: rgba(255,255,255,.88);
+}
+.brand-store-floating .brand-store-go > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 23px;
+    height: 23px;
+    margin-left: 14px;
+    border-radius: 50%;
+    background: #d93636;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    transition: transform .2s ease, background-color .2s ease;
+}
+.brand-store-floating .brand-store-main:hover .brand-store-go > span {
+    transform: translateX(3px);
+    background: #ef4545;
+}
+.brand-store-floating .brand-store-main:focus-visible {
+    border-radius: 8px;
+    outline: 2px solid #fff;
+    outline-offset: 5px;
+}
+@media (max-width: 760px) {
+    .brand-store-floating .brand-store-circle { padding: 31px; }
+    .brand-store-floating .brand-store-main strong { font-size: 20px; }
+}
+@media (max-width: 520px) {
+    .brand-store-floating .brand-store-circle { padding: 27px; }
+    .brand-store-floating .brand-store-logo { font-size: 14px; margin-bottom: 9px; }
+    .brand-store-floating .brand-store-main strong { font-size: 18px; }
+    .brand-store-floating .brand-store-go { margin-top: 13px; font-size: 12px; }
+    .brand-store-floating .brand-store-go > span { width: 20px; height: 20px; font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .brand-store-floating,
+    .brand-store-floating .brand-store-go > span { transition: none; }
+}
