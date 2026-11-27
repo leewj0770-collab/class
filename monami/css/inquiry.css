@@ -1086,3 +1086,51 @@
     border-color: #000000 !important;
     background: #F0F0F0 !important;
 }
+
+
+/* CTA 닫기 버튼: 문자 글리프 대신 CSS 선으로 검정 X를 직접 표시 */
+.brand-store-floating button.brand-store-close {
+    position: absolute !important;
+    display: block !important;
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    padding: 0 !important;
+    border: 1px solid #000000 !important;
+    border-radius: 50% !important;
+    background: #FFFFFF !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+}
+.brand-store-floating button.brand-store-close::before,
+.brand-store-floating button.brand-store-close::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    display: block !important;
+    width: 12px !important;
+    height: 1.8px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 2px !important;
+    background: #000000 !important;
+    transform-origin: center !important;
+}
+.brand-store-floating button.brand-store-close::before {
+    transform: translate(-50%, -50%) rotate(45deg) !important;
+}
+.brand-store-floating button.brand-store-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg) !important;
+}
+.brand-store-floating button.brand-store-close:hover,
+.brand-store-floating button.brand-store-close:focus-visible {
+    border-color: #000000 !important;
+    background: #F0F0F0 !important;
+}
