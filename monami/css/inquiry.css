@@ -1041,3 +1041,18 @@
     background: rgba(0,0,0,.08) !important;
     color: #111111 !important;
 }
+
+
+/* CTA 화살표: 캐시 및 기존 스타일 우선순위와 관계없이 검정색 적용 */
+.brand-store-floating .brand-store-arrow {
+    color: #000000 !important;
+    border-color: #000000 !important;
+    background-color: transparent !important;
+    -webkit-text-fill-color: #000000 !important;
+}
+.brand-store-floating .brand-store-arrow:hover,
+.brand-store-floating .brand-store-arrow:focus-visible {
+    color: #000000 !important;
+    border-color: #000000 !important;
+    background-color: rgba(0, 0, 0, .08) !important;
+}
