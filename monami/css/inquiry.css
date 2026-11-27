@@ -1023,3 +1023,21 @@
 .brand-store-floating:hover {
     box-shadow: 0 12px 32px rgba(0,0,0,.2);
 }
+
+
+/* CTA 화살표 색상 최종 보정: 흰색 배경에 맞춰 테두리와 기호를 검정으로 고정 */
+.brand-store-floating .brand-store-go .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry-copy .brand-store-arrow {
+    border-color: #111111 !important;
+    background: transparent !important;
+    color: #111111 !important;
+}
+.brand-store-floating .brand-store-go:hover .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry:hover .brand-store-arrow,
+.brand-store-floating .brand-store-go:focus-visible .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry:focus-visible .brand-store-arrow {
+    border-color: #111111 !important;
+    background: rgba(0,0,0,.08) !important;
+    color: #111111 !important;
+}
