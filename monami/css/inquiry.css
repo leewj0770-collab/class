@@ -970,3 +970,56 @@
         font-size: 12px;
     }
 }
+
+
+/* CTA 컬러 변경: 흰색 배경과 검정 텍스트 */
+.brand-store-floating {
+    background: #FFFFFF;
+    color: #111111;
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 8px 28px rgba(0,0,0,.16);
+}
+.brand-store-floating::before {
+    border-color: rgba(0,0,0,.12);
+}
+.brand-store-floating .brand-store-circle,
+.brand-store-floating .brand-store-main strong,
+.brand-store-floating .brand-store-inquiry,
+.brand-store-floating .brand-store-inquiry-copy strong {
+    color: #111111;
+}
+.brand-store-floating .brand-store-go,
+.brand-store-floating .brand-store-inquiry-copy small {
+    color: rgba(0,0,0,.72);
+}
+.brand-store-floating .brand-store-divider {
+    background: rgba(0,0,0,.18);
+}
+.brand-store-floating .brand-store-go .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry-copy .brand-store-arrow {
+    border-color: rgba(0,0,0,.65);
+    background: transparent;
+    color: #111111;
+}
+.brand-store-floating .brand-store-go:hover .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry:hover .brand-store-arrow,
+.brand-store-floating .brand-store-go:focus-visible .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry:focus-visible .brand-store-arrow {
+    background: rgba(0,0,0,.08) !important;
+}
+.brand-store-floating .brand-store-close {
+    border-color: rgba(0,0,0,.55);
+    background: transparent;
+    color: #111111;
+}
+.brand-store-floating .brand-store-close:hover,
+.brand-store-floating .brand-store-close:focus-visible {
+    background: #111111;
+    color: #FFFFFF;
+}
+.brand-store-floating .brand-store-inquiry:focus-visible {
+    outline-color: #111111;
+}
+.brand-store-floating:hover {
+    box-shadow: 0 12px 32px rgba(0,0,0,.2);
+}
