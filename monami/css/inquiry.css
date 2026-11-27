@@ -867,3 +867,26 @@
 @media (prefers-reduced-motion: reduce) {
     .brand-store-floating .brand-store-arrow { transition: none; }
 }
+
+
+/* CTA: 브랜드 스토어 로고 텍스트 제거 및 대량 구매 문의 중앙 정렬 */
+.brand-store-floating .brand-store-inquiry {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    text-align: center;
+}
+.brand-store-floating .brand-store-inquiry-copy {
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+.brand-store-floating .brand-store-inquiry-copy strong,
+.brand-store-floating .brand-store-inquiry-copy small {
+    width: 100%;
+    text-align: center;
+}
+.brand-store-floating .brand-store-inquiry .brand-store-arrow {
+    margin: 0;
+}
