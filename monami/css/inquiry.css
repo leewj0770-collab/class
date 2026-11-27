@@ -759,15 +759,15 @@
 }
 
 
-/* CTA 최종 정리: 정렬과 화살표 형태 통일, 따뜻한 뉴트럴 컬러 적용 */
+/* CTA 디자인 정리: 모나미 메인 컬러 시스템 적용 */
 .brand-store-floating {
-    background: linear-gradient(145deg, #fbf8f1 0%, #eee8dc 100%);
-    color: #242321;
-    border: 1px solid #d8d0c3;
-    box-shadow: 0 14px 34px rgba(48, 39, 28, .18), inset 0 1px 0 rgba(255,255,255,.9);
+    background: linear-gradient(145deg, #FFFFFF 0%, #F7F7F5 100%);
+    color: #1D1D1B;
+    border: 1px solid #E3E3DF;
+    box-shadow: 0 14px 34px rgba(29, 29, 27, .14), inset 0 1px 0 rgba(255,255,255,.95);
 }
 .brand-store-floating::before {
-    border-color: rgba(94, 77, 56, .18);
+    border-color: rgba(29, 29, 27, .12);
 }
 .brand-store-floating .brand-store-circle {
     align-items: stretch;
@@ -784,16 +784,16 @@
     text-align: left;
 }
 .brand-store-floating .brand-store-logo {
-    color: #a83b35;
     margin: 0 0 8px;
+    color: #D93636;
     font-size: 13px;
     letter-spacing: .13em;
 }
 .brand-store-floating .brand-store-logo span {
-    color: #a83b35;
+    color: #D93636;
 }
 .brand-store-floating .brand-store-main strong {
-    color: #242321;
+    color: #1D1D1B;
     font-size: 21px;
     letter-spacing: -.045em;
 }
@@ -806,51 +806,60 @@
     margin-top: 11px;
     padding: 0;
     border: 0;
-    color: #6c655b;
+    color: #70706C;
     font-size: 12px;
+    line-height: 1.4;
     text-align: left;
 }
 .brand-store-divider {
     width: 100%;
     margin: 15px 0 13px;
-    background: #d5cbbb;
+    background: #E3E3DF;
 }
 .brand-store-inquiry {
+    display: flex;
     align-items: center;
-    color: #242321;
+    justify-content: space-between;
+    color: #1D1D1B;
     text-align: left;
 }
 .brand-store-inquiry-copy {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    gap: 4px;
     text-align: left;
 }
 .brand-store-inquiry-copy strong {
-    color: #242321;
+    color: #1D1D1B;
     font-size: 15px;
     text-align: left;
 }
 .brand-store-inquiry-copy small {
-    color: #81786c;
+    color: #70706C;
     font-size: 10px;
     text-align: left;
 }
-.brand-store-arrow {
+/* 두 CTA에 동일한 화살표 원형 버튼을 적용 */
+.brand-store-floating .brand-store-arrow {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    flex: 0 0 23px;
-    width: 23px !important;
-    height: 23px !important;
+    flex: 0 0 24px;
+    width: 24px !important;
+    height: 24px !important;
     box-sizing: border-box;
     margin: 0 !important;
-    padding: 0;
+    padding: 0 !important;
     border: 0 !important;
     border-radius: 50%;
-    background: #a83b35;
-    color: #fff !important;
+    background: #D93636;
+    color: #FFFFFF !important;
+    font-family: inherit;
     font-size: 13px !important;
     font-weight: 500;
     line-height: 1;
+    text-align: center;
     transition: transform .2s ease, background-color .2s ease;
 }
 .brand-store-go:hover .brand-store-arrow,
@@ -858,25 +867,26 @@
 .brand-store-go:focus-visible .brand-store-arrow,
 .brand-store-inquiry:focus-visible .brand-store-arrow {
     transform: translate(2px, -2px);
-    background: #842d29;
+    background: #B92D2D;
+}
+.brand-store-inquiry:focus-visible {
+    outline: 2px solid #D93636;
+    outline-offset: 5px;
+    border-radius: 3px;
 }
 .brand-store-close {
-    border-color: #c9beae;
-    background: rgba(255,255,255,.58);
-    color: #5b5146;
+    border-color: #E3E3DF;
+    background: rgba(255,255,255,.9);
+    color: #4B4B4B;
 }
 .brand-store-close:hover,
 .brand-store-close:focus-visible {
-    border-color: #a83b35;
-    background: #a83b35;
-    color: #fff;
-}
-.brand-store-inquiry:focus-visible,
-.brand-store-floating .brand-store-main:focus-visible {
-    outline-color: #a83b35;
+    border-color: #D93636;
+    background: #D93636;
+    color: #FFFFFF;
 }
 .brand-store-floating:hover {
-    box-shadow: 0 18px 38px rgba(48, 39, 28, .22), inset 0 1px 0 rgba(255,255,255,.95);
+    box-shadow: 0 18px 38px rgba(29, 29, 27, .18), inset 0 1px 0 rgba(255,255,255,.98);
 }
 @media (max-width: 760px) {
     .brand-store-floating .brand-store-circle { padding: 31px 31px 27px; }
@@ -891,8 +901,13 @@
     .brand-store-floating .brand-store-go { font-size: 10px; }
     .brand-store-inquiry-copy strong { font-size: 11px; }
     .brand-store-inquiry-copy small { font-size: 8px; }
-    .brand-store-arrow { flex-basis: 20px; width: 20px !important; height: 20px !important; font-size: 11px !important; }
+    .brand-store-floating .brand-store-arrow {
+        flex-basis: 21px;
+        width: 21px !important;
+        height: 21px !important;
+        font-size: 11px !important;
+    }
 }
 @media (prefers-reduced-motion: reduce) {
-    .brand-store-arrow { transition: none; }
+    .brand-store-floating .brand-store-arrow { transition: none; }
 }
