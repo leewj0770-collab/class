@@ -457,3 +457,114 @@
     .brand-store-floating,
     .brand-store-floating .brand-store-go > span { transition: none; }
 }
+
+
+/* 메인 INQUIRY 섹션: 단체 문의 이미지를 활용한 와이드 배너 */
+.inquiry-section{
+    height:auto;
+    min-height:620px;
+    padding:100px clamp(24px,7vw,110px);
+    background:#f5f5f2;
+}
+.inquiry-inner{
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);
+    align-items:center;
+    gap:clamp(40px,7vw,112px);
+    width:min(100%,1480px);
+    height:auto;
+}
+.inquiry-visual{
+    position:relative;
+    height:500px;
+    overflow:hidden;
+    border-radius:4px;
+    background:#e8e6e1;
+}
+.inquiry-visual::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(0,0,0,.04),rgba(0,0,0,.12));
+    pointer-events:none;
+}
+.inquiry-visual img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.inquiry-content{min-width:0;padding:24px 0}
+.inquiry-eyebrow{
+    margin:0 0 24px;
+    color:#d52b2b;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:.2em;
+}
+.inquiry-content h2{
+    margin:0 0 22px;
+    color:#171717;
+    font-size:clamp(32px,3.6vw,54px);
+    font-weight:650;
+    letter-spacing:-.065em;
+    line-height:1.2;
+    word-break:keep-all;
+}
+.inquiry-description{
+    margin:0;
+    color:#686868;
+    font-size:15px;
+    line-height:1.9;
+    word-break:keep-all;
+}
+.inquiry-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:42px;
+}
+.inquiry-action{
+    display:flex;
+    min-width:180px;
+    min-height:58px;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    box-sizing:border-box;
+    padding:0 20px;
+    border:1px solid #222;
+    color:#222;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    transition:background .25s ease,color .25s ease,border-color .25s ease;
+}
+.inquiry-action span{font-size:18px;transition:transform .25s ease}
+.inquiry-action:hover,.inquiry-action:focus-visible{
+    border-color:#d52b2b;
+    background:#d52b2b;
+    color:#fff;
+}
+.inquiry-action:hover span,.inquiry-action:focus-visible span{transform:translate(3px,-3px)}
+.inquiry-action:focus-visible{outline:2px solid #d52b2b;outline-offset:4px}
+@media(max-width:900px){
+    .inquiry-section{min-height:0;padding:76px 32px}
+    .inquiry-inner{grid-template-columns:1fr 1fr;gap:36px}
+    .inquiry-visual{height:420px}
+    .inquiry-action{min-width:150px}
+}
+@media(max-width:640px){
+    .inquiry-section{padding:56px 20px}
+    .inquiry-inner{grid-template-columns:1fr;gap:30px}
+    .inquiry-visual{height:auto;aspect-ratio:1.2/1}
+    .inquiry-content{padding:0}
+    .inquiry-eyebrow{margin-bottom:16px}
+    .inquiry-content h2{font-size:34px;margin-bottom:16px}
+    .inquiry-description{font-size:14px}
+    .inquiry-actions{margin-top:28px;display:grid;grid-template-columns:1fr}
+    .inquiry-action{width:100%;min-width:0}
+}
+@media(prefers-reduced-motion:reduce){
+    .inquiry-action,.inquiry-action span{transition:none}
+}
