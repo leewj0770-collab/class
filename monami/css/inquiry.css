@@ -757,3 +757,142 @@
 @media (prefers-reduced-motion: reduce) {
     .brand-store-inquiry-arrow { transition: none; }
 }
+
+
+/* CTA 최종 정리: 정렬과 화살표 형태 통일, 따뜻한 뉴트럴 컬러 적용 */
+.brand-store-floating {
+    background: linear-gradient(145deg, #fbf8f1 0%, #eee8dc 100%);
+    color: #242321;
+    border: 1px solid #d8d0c3;
+    box-shadow: 0 14px 34px rgba(48, 39, 28, .18), inset 0 1px 0 rgba(255,255,255,.9);
+}
+.brand-store-floating::before {
+    border-color: rgba(94, 77, 56, .18);
+}
+.brand-store-floating .brand-store-circle {
+    align-items: stretch;
+    justify-content: center;
+    padding: 38px 39px 34px;
+}
+.brand-store-floating .brand-store-main {
+    align-items: stretch;
+    text-align: left;
+}
+.brand-store-floating .brand-store-logo,
+.brand-store-floating .brand-store-main strong {
+    width: 100%;
+    text-align: left;
+}
+.brand-store-floating .brand-store-logo {
+    color: #a83b35;
+    margin: 0 0 8px;
+    font-size: 13px;
+    letter-spacing: .13em;
+}
+.brand-store-floating .brand-store-logo span {
+    color: #a83b35;
+}
+.brand-store-floating .brand-store-main strong {
+    color: #242321;
+    font-size: 21px;
+    letter-spacing: -.045em;
+}
+.brand-store-floating .brand-store-go {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 11px;
+    padding: 0;
+    border: 0;
+    color: #6c655b;
+    font-size: 12px;
+    text-align: left;
+}
+.brand-store-divider {
+    width: 100%;
+    margin: 15px 0 13px;
+    background: #d5cbbb;
+}
+.brand-store-inquiry {
+    align-items: center;
+    color: #242321;
+    text-align: left;
+}
+.brand-store-inquiry-copy {
+    align-items: flex-start;
+    text-align: left;
+}
+.brand-store-inquiry-copy strong {
+    color: #242321;
+    font-size: 15px;
+    text-align: left;
+}
+.brand-store-inquiry-copy small {
+    color: #81786c;
+    font-size: 10px;
+    text-align: left;
+}
+.brand-store-arrow {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 23px;
+    width: 23px !important;
+    height: 23px !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+    padding: 0;
+    border: 0 !important;
+    border-radius: 50%;
+    background: #a83b35;
+    color: #fff !important;
+    font-size: 13px !important;
+    font-weight: 500;
+    line-height: 1;
+    transition: transform .2s ease, background-color .2s ease;
+}
+.brand-store-go:hover .brand-store-arrow,
+.brand-store-inquiry:hover .brand-store-arrow,
+.brand-store-go:focus-visible .brand-store-arrow,
+.brand-store-inquiry:focus-visible .brand-store-arrow {
+    transform: translate(2px, -2px);
+    background: #842d29;
+}
+.brand-store-close {
+    border-color: #c9beae;
+    background: rgba(255,255,255,.58);
+    color: #5b5146;
+}
+.brand-store-close:hover,
+.brand-store-close:focus-visible {
+    border-color: #a83b35;
+    background: #a83b35;
+    color: #fff;
+}
+.brand-store-inquiry:focus-visible,
+.brand-store-floating .brand-store-main:focus-visible {
+    outline-color: #a83b35;
+}
+.brand-store-floating:hover {
+    box-shadow: 0 18px 38px rgba(48, 39, 28, .22), inset 0 1px 0 rgba(255,255,255,.95);
+}
+@media (max-width: 760px) {
+    .brand-store-floating .brand-store-circle { padding: 31px 31px 27px; }
+    .brand-store-floating .brand-store-main strong { font-size: 18px; }
+    .brand-store-divider { margin: 12px 0 10px; }
+    .brand-store-inquiry-copy strong { font-size: 13px; }
+}
+@media (max-width: 520px) {
+    .brand-store-floating .brand-store-circle { padding: 27px 27px 23px; }
+    .brand-store-floating .brand-store-logo { font-size: 11px; }
+    .brand-store-floating .brand-store-main strong { font-size: 16px; }
+    .brand-store-floating .brand-store-go { font-size: 10px; }
+    .brand-store-inquiry-copy strong { font-size: 11px; }
+    .brand-store-inquiry-copy small { font-size: 8px; }
+    .brand-store-arrow { flex-basis: 20px; width: 20px !important; height: 20px !important; font-size: 11px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .brand-store-arrow { transition: none; }
+}
