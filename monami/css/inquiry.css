@@ -1067,3 +1067,22 @@
 .brand-store-floating .brand-store-inquiry-copy:focus-visible .brand-store-arrow {
     transform: translateX(3px) !important;
 }
+
+
+/* CTA 닫기 X 표시를 선명한 검정색으로 고정 */
+.brand-store-floating .brand-store-close {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    border: 1px solid #000000 !important;
+    background: #FFFFFF !important;
+    opacity: 1 !important;
+    font-size: 19px;
+    font-weight: 500;
+}
+.brand-store-floating .brand-store-close:hover,
+.brand-store-floating .brand-store-close:focus-visible {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    border-color: #000000 !important;
+    background: #F0F0F0 !important;
+}
