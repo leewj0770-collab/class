@@ -494,23 +494,26 @@
     }
 }
 
-/* 메인 뉴스: 기사 4개 목록 높이에 맞춰 오른쪽 이미지 높이 설정 */
+/* 메인 뉴스: 왼쪽 기사 목록 높이를 기준으로 이미지 크기 고정 */
 @media (min-width: 761px) {
     #monami-news .news-content {
-        align-items: start;
-    }
-
-    #monami-news .news-list {
-        align-self: start;
+        align-items: stretch;
+        grid-template-rows: auto;
     }
 
     #monami-news .news-preview {
-        aspect-ratio: auto;
-        height: auto;
+        position: relative;
         align-self: stretch;
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        aspect-ratio: auto;
+        overflow: hidden;
     }
 
     #monami-news .news-preview img {
+        position: absolute;
+        inset: 0;
         display: block;
         width: 100%;
         height: 100%;
