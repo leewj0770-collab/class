@@ -1056,3 +1056,14 @@
     border-color: #000000 !important;
     background-color: rgba(0, 0, 0, .08) !important;
 }
+
+
+/* CTA 바로가기 화살표 hover 동작 통일: 두 화살표 모두 오른쪽으로 이동 */
+.brand-store-floating .brand-store-go:hover .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry:hover .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry-copy:hover .brand-store-arrow,
+.brand-store-floating .brand-store-go:focus-visible .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry:focus-visible .brand-store-arrow,
+.brand-store-floating .brand-store-inquiry-copy:focus-visible .brand-store-arrow {
+    transform: translateX(3px) !important;
+}
